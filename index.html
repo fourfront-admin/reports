@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fourfront — Ads Report · 2 April 2026</title>
+<title>Fourfront — Ads Report · 9 April 2026</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8fafc;color:#1e293b;font-size:14px;display:flex;height:100vh;overflow:hidden}
@@ -31,1241 +31,19 @@
 <nav class="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-title">Fourfront Reports</div>
-    <div class="sidebar-date">2 April 2026</div>
+    <div class="sidebar-date">9 April 2026</div>
   </div>
   
-  <button class="nav-item" data-slug="billion-avenue" onclick="showClient('billion-avenue')">
-    <span class="nav-name">Billion Avenue</span>
-    <div class="nav-roas">
-      <span style="color:#16a34a">M 9.37x</span>
-      <span style="color:#16a34a">G 20.45x</span>
-    </div>
-  </button>
   <button class="nav-item" data-slug="kamping-kitsch-club" onclick="showClient('kamping-kitsch-club')">
     <span class="nav-name">Kamping Kitsch Club</span>
     <div class="nav-roas">
-      <span style="color:#16a34a">M 9.97x</span>
-      <span style="color:#16a34a">G 76.51x</span>
+      <span style="color:#16a34a">M 8.38x</span>
+      <span style="color:#16a34a">G 51.99x</span>
     </div>
   </button>
 </nav>
 <main class="main">
-  <section id="client-billion-avenue" class="client-section">
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8fafc;color:#1e293b;font-size:14px}
-  .page{max-width:1200px;margin:0 auto;padding:32px 24px}
-  .page-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px}
-  h1{font-size:22px;font-weight:700}
-  .sub{color:#64748b;font-size:13px;margin-bottom:28px}
-  .section{margin-bottom:40px}
-  .section-header{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
-  .section-header h2{font-size:14px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:.06em}
-  .pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.04em}
-  .pill-meta{background:#ede9fe;color:#6d28d9}
-  .pill-google{background:#dbeafe;color:#1d4ed8}
-  .pill-ai{background:#d1fae5;color:#065f46}
-  /* Country sections */
-  .country-section{margin-bottom:40px}
-  .country-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
-  .country-header h3{font-size:16px;font-weight:700;color:#0f172a}
-  .flag{font-size:20px;line-height:1}
-  .country-meta{margin-left:auto;font-size:12px;color:#94a3b8}
-  /* Strategic overview — list format */
-  .overview-box{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px 24px;margin-bottom:20px}
-  .ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
-  .ov-head{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-  .ov-head.green{color:#15803d}
-  .ov-head.red{color:#dc2626}
-  .ov-head.blue{color:#1d4ed8}
-  .ov-head.orange{color:#d97706}
-  .ov-text{font-size:13px;color:#334155;line-height:1.75}
-  /* Creative grid */
-  .creative-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
-  .creative-card{background:#fff;border:2px solid #e2e8f0;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
-  .creative-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.12);transform:translateY(-2px)}
-  .creative-card.top{border-color:#10b981}
-  .creative-card.mid{border-color:#f59e0b}
-  .creative-card.low{border-color:#ef4444}
-  .creative-card.none{border-color:#e2e8f0}
-  .thumb-wrap{position:relative;aspect-ratio:1/1;background:#f1f5f9;overflow:hidden;flex-shrink:0}
-  .thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-  .thumb-wrap.no-img{display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:11px}
-  .age-chip{position:absolute;bottom:6px;left:6px;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.25)}
-  .age-chip.fresh{background:#dcfce7;color:#15803d}
-  .age-chip.mid{background:#fef9c3;color:#a16207}
-  .age-chip.old{background:#fee2e2;color:#dc2626}
-  .age-chip.grey{background:#f1f5f9;color:#94a3b8}
-  /* Metric bar below thumbnail */
-  .metric-bar{padding:7px 10px;font-size:15px;font-weight:800;text-align:center;letter-spacing:.01em;line-height:1}
-  .metric-bar.green{background:#dcfce7;color:#15803d}
-  .metric-bar.yellow{background:#fef9c3;color:#a16207}
-  .metric-bar.red{background:#fee2e2;color:#dc2626}
-  .metric-bar.grey{background:#f1f5f9;color:#94a3b8;font-weight:600}
-  .card-body{padding:10px;flex:1;display:flex;flex-direction:column;gap:6px}
-  .ad-name{font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#0f172a}
-  .verdict{font-size:11px;color:#475569;font-style:italic;line-height:1.45;background:#f8fafc;border-radius:6px;padding:6px 8px}
-  .card-stats{display:flex;justify-content:space-between;margin-top:2px}
-  .stat{display:flex;flex-direction:column;align-items:center;flex:1}
-  .stat-val{font-size:13px;font-weight:700;color:#1e293b}
-  .stat-lbl{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
-  .action-pill{display:inline-block;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.04em;margin-top:2px;align-self:flex-start}
-  .action-pill.scale{background:#dcfce7;color:#15803d}
-  .action-pill.keep{background:#dbeafe;color:#1d4ed8}
-  .action-pill.test{background:#fef9c3;color:#a16207}
-  .action-pill.pause{background:#fee2e2;color:#dc2626}
-  /* KPI grid */
-  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:20px}
-  .kpi{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px}
-  .kpi .label{font-size:10px;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
-  .kpi .value{font-size:20px;font-weight:700;color:#0f172a}
-  .kpi .sub{font-size:11px;color:#94a3b8;margin-top:2px}
-  /* Tables */
-  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-bottom:8px}
-  th{background:#f1f5f9;text-align:left;padding:9px 13px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#64748b;font-weight:600}
-  td{padding:9px 13px;border-top:1px solid #f1f5f9;vertical-align:top;font-size:13px}
-  tr:hover td{background:#f8fafc}
-  .badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
-  .badge.green{background:#dcfce7;color:#16a34a}
-  .badge.yellow{background:#fef9c3;color:#a16207}
-  .badge.red{background:#fee2e2;color:#dc2626}
-  .badge.grey{background:#f1f5f9;color:#64748b}
-  .tag{display:inline-block;background:#f1f5f9;color:#475569;border-radius:4px;padding:1px 6px;font-size:11px;margin-top:2px}
-  .tag.warn{background:#fef3c7;color:#d97706}
-  .note{font-size:12px;color:#94a3b8;margin-bottom:10px}
-  small{color:#94a3b8}
-  hr.div{border:none;border-top:2px solid #e2e8f0;margin:36px 0}
-  .action-list{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-top:20px}
-  .action-list-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#64748b;margin-bottom:12px}
-  .action-row{display:flex;align-items:baseline;gap:10px;padding:6px 0;border-top:1px solid #f1f5f9}
-  .action-row:first-of-type{border-top:none}
-  .action-num{font-size:11px;font-weight:700;color:#94a3b8;min-width:16px}
-  .action-pill.orange{background:#fef3c7;color:#d97706}
-  .action-pill.grey{background:#f1f5f9;color:#64748b}
-  .action-pill.blue{background:#dbeafe;color:#1d4ed8}
-  .action-what{font-size:13px;font-weight:600;color:#0f172a;flex-shrink:0}
-  .action-why{font-size:12px;color:#64748b}
-</style>
-<div class="client-content">
-  <div class="page-header">
-    <h1>Billion Avenue — Ads Report</h1>
-    <span style="color:#94a3b8;font-size:13px">2 April 2026 · Last 30 days</span>
-  </div>
-  <p class="sub">Meta Ads + Google Ads · Creative insights + Performance</p>
-
-  
-  <!-- ─── Creative Analysis ──────────────────────────────────────────────── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="pill pill-ai">AI</span>
-      <h2>Creative Analysis</h2>
-      <span style="color:#94a3b8;font-size:12px;margin-left:auto">30 ads · Meta · last 30 days</span>
-    </div>
-    <p class="note">Split by country · Click any card → public post · Green border = ROAS ≥3 · Yellow = ROAS ≥1.5 · Red = no purchases</p>
-    
-    <div class="country-section">
-      <div class="country-header">
-        <span class="flag">🇧🇪</span>
-        <h3>Belgium</h3>
-        <span class="country-meta">17 ads · €6849 spend · 297 purchases</span>
-      </div>
-      
-      <div class="creative-grid">
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1476762391127186&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.2147-6/75341531_494485104475166_2751028116179648512_n.png?_nc_cat=1&ccb=1-7&_nc_ohc=hloZsyI-OP4Q7kNvwEBcUOU&_nc_oc=AdqsPqJbaEHxfrG-pVdnYV6OdBfKawaL4n9YVO-P7zF4_l0SoFz3h9y7I2AmjKx6saglTctrq3jIIhqGPEYMDqDG&_nc_zt=14&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQHugFZxFO5EHuUeJ-qUJpAbg6chvNLAjVMM7qmHg1o4OBE-JOAjxs1bnK3AcA29LaLaiC1-JnpXeQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=39b8c1&_nc_sid=58080a&oh=00_Af0Kk8xBR5ZaPmrOhsZZBU0L37Am6-iPvkSK9oPI_6H87w&oe=69D467C4" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">125d</span></div>
-        <div class="metric-bar green">ROAS 16.68x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Carousel_120237873305580396">Carousel_120237873305580396</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€2497</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">127</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€19.66</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182581818500&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/638425185_803668289436381_6496543057191828379_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=MjPuNYUdmQIQ7kNvwHN0eex&_nc_oc=AdqbSXWUW4ZicJVBpORvzJe8LqEAruMQ53cDOCkxrfrJXUuhg0ZFybg2i_yKHzcL3vFKxMvrVqKWgnUHRwa4L3gv&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEYOIg045Ob_hhA8-xFv9wSnwore95UCpkXmwg4wTL0HHxGt5cJrp9q4WFT_XQiNCmTTWMjEBZtDA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0D06R896PGTTBQH6BsRhYFDELjjKBH1vc8aoo0MXr5Nw&oe=69D46D61" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar green">ROAS 4.98x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ General _ 02">Single video_ General _ 02</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€769</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">30</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€25.65</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182621818496&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/639428304_1410538350852027_5352795322759621372_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=bq_rSU5CZnMQ7kNvwGTRUpj&_nc_oc=AdpljG7E_koPHM98bQYtyTr5ocv0O_0s2ib5fJAuxVmPbNCrgR76o-il5OwD5l5IxnKjb6CCa4wLC9WJgrFQvQe7&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQGCLRU5REqXK27zNmjuP56oW5fm5NmFXBzs4SskaBilH274Ze61JnnMgWJDjNPvXSxYUxq4-7K5TQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0nWpjGqD5zkI57f5UFlXQn4Hc0vw5ClilMaxzTToRVjA&oe=69D481E6" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar green">ROAS 7x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ General _ 01">Single video_ General _ 01</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€660</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">20</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€33.02</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1393194689218762&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628964373_1393194705885427_7918110261139672521_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=1uQHKJ2XYicQ7kNvwGAMMKv&_nc_oc=AdpzTijp9seuEg40Po8ihBpYg3CDPDM-pET5fDrMsiBxNLzQwFmGxQwVjzDUZowchoUIXfc-RFwGei5mfB8GYX2m&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFq9_5o5EwtfyOEZpANfQkNfe5g2ZBelOnkoYi32ILWZRmXEF8PfAH5AG1et2WmFAr2ZTKFUNPSCg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af0uesQ4td0Bp3mObaiENrWloYFJHC0jYJmWXqAy4pEErA&oe=69D457CE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">50d</span></div>
-        <div class="metric-bar green">ROAS 13.48x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Girls want diamonds">Girls want diamonds</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€579</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">22</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.3</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1496050189198406&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/634021382_25916911571291515_1820394817589193350_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=O9GLgxaC6Y0Q7kNvwGk4RuT&_nc_oc=AdqMoVOvBYK6asG8wRxzaMALv_pcJjPMNKVpCvgRp0r_ZXKp1CKSg6cdIguFWKdsUSY-s6ui5SmovWf9trluakoQ&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFxCcjzCF3fp_e_mGGzd1-p-DSVl1MA7Gas7J5dJzi2jFFky6U63z8OYlVz3YUY-hsHtCIVLjSqUA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1TG8WPrV-yZmSms766Ih2zQ4DMYr81j_ZKOVAtAKLKng&oe=69D47EC8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">45d</span></div>
-        <div class="metric-bar yellow">ROAS 2.99x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Ivy Earcuff">Single video_ Ivy Earcuff</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€451</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">14</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€32.23</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1421135230023236&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/580967807_1528346804951451_6706056506589486166_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=ta4kTVvaPtMQ7kNvwH5hdG6&_nc_oc=AdqV4pMDAqlB3u1Tou0lNmN_c5irVE7gASP_U7Qung3GW0OJixNrO_qMK9HzU9bpzXfAySeF-V7zwNIlJc--AYzZ&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQGvvUr7D5JccQtvtb7X0r9GETqjFDvpkddH5WKGd629b4tD3_dNvU9CXuhqMiRDGGiF7Rd9l9VUEA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af2HvaB5V1eExeEIRkH6OJhppyfTVEBSmqTp5ap1lpKdhw&oe=69D46651" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">71d</span></div>
-        <div class="metric-bar green">ROAS 4.29x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_120240119020730396">Single video_120240119020730396</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€422</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">17</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€24.83</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1496048152531943&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/629831699_1970070063890545_6622734864025614162_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=xypl06acqL8Q7kNvwHrDHAg&_nc_oc=AdoB6ewJq8cA0WQmdgofEVOo2FcrbS-b_KrhRazL77Is_0GLThgH3PaX34NcTyN-Lr2dhF0Ea1-8LNw99l0YiSvu&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFPacUOgHHCOQ0AvKmgTfX7aFuC1SzBrqkPw4WnLBu5S4bTymQmoDgRnaU1wA1OwohBbhIFNVDyew&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0wpcJ7Jn9f7JOKbMZ-ng2aQvh7A4wTGVW4-9tudKODYw&oe=69D461D1" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">45d</span></div>
-        <div class="metric-bar green">ROAS 11.13x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Maxine">Single video_ Maxine</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€354</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">13</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€27.2</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182545151837&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t39.30808-1/315228210_3228865857366652_983313744138274786_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=L4DMI8NDijgQ7kNvwFQjTAc&_nc_oc=AdrB_wEu6z_TypwlatnJFSIgsv9riLFu5ap1In_J1x7C-FtmFgmRPFiBwgiTJkds4nxsR03XychhvXt6gCdbh24p&_nc_zt=24&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEmWOwHZVP1rslW7B39t49BsWsTfWasorEDdfHGaoVLjpUU17sR7yrW1-tRz5s0DfpCf7ZljarZNw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=68aae3&_nc_sid=58080a&oh=00_Af3TPRE-r35s1gJ8FSX1FrAPUbpneehe64iKpYzSISjc-A&oe=69D46E73" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar green">ROAS 18.83x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Bulb Diamond Earstud">Single video_ Bulb Diamond Earstud</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€198</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">13</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€15.25</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1617630529481727&id=612865022544543" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/650773404_1617630566148390_155894224891414786_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=P4wJ6DlrZAsQ7kNvwGhJ_pZ&_nc_oc=AdquOjCB5VUnHtdmRiMxoMbrn2B53qh7ezxiebZI806ydLeh6ur8i17W_9kpsKE0RROJwpNfiv5j0Z7LVNxPbbLy&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQELlHwrwJfbp7_fL4W3PcrOCg3FX16eF7zdrfR85glopDsHSwZFPM0XZVSr6KanCBgwZkQExE2VGg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af3jgOQ-Un4wscOPhorZaP50gL9nhhYCHwBLdIxxCvZFIg&oe=69D47AB2" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">20d</span></div>
-        <div class="metric-bar green">ROAS 12.48x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ Lara Vandatte">Video _ Lara Vandatte</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€163</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€20.39</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1216368514003883&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/638465414_1216368527337215_8183985651514466293_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=xyoAo__az9wQ7kNvwELGk4y&_nc_oc=AdojGW0z_7H8N3I_qSQBVUx5XutdMzJ7v5kRicDReZxRSULGaKTnLtJH4vtGuInDJWiud8REVi0idcXB3aHpoeyh&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQECJQnqp6RrL_TvETrIss74Ihwne9q8IA3sFrLlpeNzNpEXe6oBzKaQ1n14GgK-3kBLeYijvmmXkw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af00slyGR8lr5WCl1Hx9F450pk0loS_T3s2_sbFA9rDJMQ&oe=69D471A8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">36d</span></div>
-        <div class="metric-bar yellow">ROAS 2.03x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_Signup NEW DROP">Single video_Signup NEW DROP</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€120</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€59.79</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1421135233356569&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/581941070_1898716204333072_4377596424640932995_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=m3jaxAaL-AsQ7kNvwHX6XpV&_nc_oc=AdrQMZBreAusS6lOGsTdT0RDnbhJHCJNFvtf_pVA9S3hC-7Ywt1g9y7WelKgZXm3kzUwjIqA_p063H_Us07EaBVL&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQH0x9h924k8E3dMmP82fYksd0Q1EbS8qVBTNUeH6Am58ttQvqFB7GC2MjBJBTajhJY74MxK2jmNuA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af0Z8Jn9cfe5UIMuiS4JFSxXDUn9K7fGWyEYmuuHIc9_Jw&oe=69D46A0B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">125d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_120237873305570396">Single video_120237873305570396</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€112</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182575151834&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/637958182_888057977550813_3054999918845971398_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=pNFsANc0cG4Q7kNvwEYXYOI&_nc_oc=Adq-yjCXqeSB-liLGttA3yswuOBfiHD3HDXFdbk62BHu6NjXAChYEL4L6X_tK_ygLB76dhzprU75NfjLLNqEwogF&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEt_EzwBJiwYF3gkbvJ6X44SjAHs6mUKjNlTyI0oJIDubG7pgQqdbwo_U7yG6n8BfRaYDaTwE4OAQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af2FDcBawW8Z6zRaHkljCGuIGf_T7yaqHj4TOo5Y9e06NA&oe=69D46CFA" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar green">ROAS 11.26x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Bulb Earstud">Single video_ Bulb Earstud</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€103</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">6</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€17.11</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182568485168&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/637721053_921112897108681_3496271547424656278_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=bfB01PZtkEYQ7kNvwFrdcB1&_nc_oc=AdpTjTXKfMmP3hfY-_0zLvBgLrmE1QCXCG9OGhNGEvt44N7qnAi_kVDoqAVWot3GgWPzEYaZB7n3tolqiZsYT5Dc&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQH7GQqghiP4MOjRgCcx1n3_TbzVAvSpeYhgmTRvoApCqKKq124JyuA4jSoQzEQMcJJrGltZTP0OxQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1C408-0ttEAOHvoG8w0mYov8h83Q-SfNR3lB0DvwrkNA&oe=69D487F3" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar green">ROAS 18.98x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Kay Alpha">Single video_ Kay Alpha</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€99</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€12.32</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=891304946652252&id=102823542181712" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/604193965_891304966652250_761678527584037567_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=qTwgWgbcpmsQ7kNvwE6m2V9&_nc_oc=Adq5xIaG6wSEg2VBUEVsYcw-V1wuMON_fPXTa6KWx3NKw0G4EV1jp289_5ICyiZ6iJWS8YX5xDy1ZHjxrmSbf5QX&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQHH5xexJyDIpC-U5WQJQcEprSlyqsyoLsG-vYP7_CZd859-Ij4a3QbibqRWfImwRoreX8u2nGagJw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af1zyOkWTBjx7HsAL5eB1qFkMyTgEkdCg5cLl4psMa85zg&oe=69D46342" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">71d</span></div>
-        <div class="metric-bar yellow">ROAS 3.43x</div>
-        <div class="card-body">
-          <div class="ad-name" title="*_120240119033110396">*_120240119033110396</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€93</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€23.16</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=902015178943857&id=104028482775565" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/623062941_902015212277187_5231627961631864176_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=Ff4dweCszFoQ7kNvwEBflfw&_nc_oc=Adq2bltqiflWMJiaTZeVK8fZjicGZ2F_b2b4GMh-0Rjb0pzSqD47iHXi77qrw1Ofrhn5qF-fGEuMmCzTOOMuUAQt&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEA2a_HgNshU2UpdyCf5Ky8AdUDn36iDzGM66c1jfltOia5rZ-j4ZEZrJsA7HyP5VyY2by2QORNxQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af2gYUq4DUUzp3-Mzz-Gd7C0tnq2XAYG5c0RrG14TF_yWA&oe=69D48001" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">66d</span></div>
-        <div class="metric-bar green">ROAS 7.06x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Louise De Rycke - Whitelist">Louise De Rycke - Whitelist</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€91</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">7</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€13.03</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1455149496251156&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/658151930_1455149516251154_3661422908422426943_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=krd_3rx5yNYQ7kNvwHg583D&_nc_oc=AdoYaH4yZrBg_5fqWGw0ePTze3qojzvSoQaQBqeAD82gqQY235541yX-9PHgYFhAQ-fY-qjpBTgKSLYBD45ECQk1&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEqRFmz-4HSS8ZPPNKzvUErkxOq-RjGXYMw-fjcUIb2HcEGCnYMRDoOmMAReIf1W_TnIAyp9jFvsw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af2i8_WzTmIS9cZIswJEGQcw1WbcAzgQG0_becIB1zrK6w&oe=69D47008" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 6.82x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ Emilia">Video _ Emilia</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€82</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">5</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€16.48</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1417875749588907&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/656752565_1417875772922238_5882759880778710872_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=-K_u0Z-Uso4Q7kNvwFXX6cZ&_nc_oc=AdpVtB8wjYUp2OkH2tlXaLJ7CEWwjsAGx4wZMMyUIQqA11F0cShoztNbVMfvNcY4WoBB8icuepbu9e3buMadTZZq&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFxqKAFnvtKvh9e4Xq24hetSe3y8KMwB5VO3zkZZ-ezkxrbE4LyNqpZpUAgbDymiWFlRzqN4tEq7Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af2n2-FxelHPGTJXLcYGn04PmZ0iIRzFM_NXT4XdR1bozw&oe=69D47FA1" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar red">ROAS 0.68x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ Astrid 2">Video _ Astrid 2</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€56</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€56.28</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a></div>
-      
-    </div>
-    <div class="country-section">
-      <div class="country-header">
-        <span class="flag">🇩🇪</span>
-        <h3>Germany</h3>
-        <span class="country-meta">6 ads · €680 spend · 20 purchases</span>
-      </div>
-      
-      <div class="creative-grid">
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1393194689218762&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628964373_1393194705885427_7918110261139672521_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=1uQHKJ2XYicQ7kNvwGAMMKv&_nc_oc=AdpzTijp9seuEg40Po8ihBpYg3CDPDM-pET5fDrMsiBxNLzQwFmGxQwVjzDUZowchoUIXfc-RFwGei5mfB8GYX2m&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFq9_5o5EwtfyOEZpANfQkNfe5g2ZBelOnkoYi32ILWZRmXEF8PfAH5AG1et2WmFAr2ZTKFUNPSCg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af0uesQ4td0Bp3mObaiENrWloYFJHC0jYJmWXqAy4pEErA&oe=69D457CE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">8d</span></div>
-        <div class="metric-bar green">ROAS 4.67x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Girls want diamonds">Girls want diamonds</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€210</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.25</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1496048152531943&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/629831699_1970070063890545_6622734864025614162_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=xypl06acqL8Q7kNvwHrDHAg&_nc_oc=AdoB6ewJq8cA0WQmdgofEVOo2FcrbS-b_KrhRazL77Is_0GLThgH3PaX34NcTyN-Lr2dhF0Ea1-8LNw99l0YiSvu&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFPacUOgHHCOQ0AvKmgTfX7aFuC1SzBrqkPw4WnLBu5S4bTymQmoDgRnaU1wA1OwohBbhIFNVDyew&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0wpcJ7Jn9f7JOKbMZ-ng2aQvh7A4wTGVW4-9tudKODYw&oe=69D461D1" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">45d</span></div>
-        <div class="metric-bar green">ROAS 11.7x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Maxine">Single video_ Maxine</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€157</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€19.6</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1532609358875822&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://external-bru2-1.xx.fbcdn.net/emg1/v/t13/6560621659177694481?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQK9lFUEOHkOcq2O8p8gvYwbEC45QTutZdtMew8vpg_wk5Q1zJfEYyLHm9uXTPv2cl1j6bLlvsPi0ZOBXk8qGVUaE85unxZnuD-I8ejUYFJAW63z4_5kLIODu2PpYcQRqpumpNUVqRmcNVRb4jIisYJ1&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_oc=AdrNpru7GP6MAm_MbpmEK18i5Pss3g5HD-hiaQq8hF6OkYCOivCgaWx10a5xliM3o4X3jDwC1_cecGAHidDun3K4&ccb=13-1&oh=06_Q3-9AedpkiJNWOk3NprF9zUf85VY_inG54yKDyuhfrSg1ahd&oe=69D077C8&_nc_sid=58080a" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar red">ROAS 0.35x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Advantage Catalog _ Gold Earring">Advantage Catalog _ Gold Earring</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€86</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€86.38</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182601818498&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/639428304_1410538350852027_5352795322759621372_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=bq_rSU5CZnMQ7kNvwGTRUpj&_nc_oc=AdpljG7E_koPHM98bQYtyTr5ocv0O_0s2ib5fJAuxVmPbNCrgR76o-il5OwD5l5IxnKjb6CCa4wLC9WJgrFQvQe7&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEefZ9D4BFOlVV8rFoUnEGcdifJd1GWCOQMGuKcxXPM-uh8IDLlwoAEkUAgwzDh5YIco-PoRnlmNw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af233_8oOskrj_l8F1O1zdrR2m75czr6pSstdFqPHSE1Fg&oe=69D481E6" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar yellow">ROAS 3.96x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ General _ 01 - Copy 2">Single video_ General _ 01 - Copy 2</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€84</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€83.94</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1532608512209240&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://external-bru2-1.xx.fbcdn.net/emg1/v/t13/3720299788226700967?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKmkVuZfmCb5HVm8E4067zUtQMfXcCUYOPILpkvHkSrBsW7hgyU4kohlavL0VIHkuUzYflYBFMNKYzV-RJburoMYi9z-PxLTIaDHKyP2nNt6L7Y79kVYSlzK9p0jBrNIYAKgsByZnsnylfa17r0gggW&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_oc=AdpN5ydtfbFTLx7JYRiFsRYQCF_ZRb-nOtpa_GTkrp-rF__jW4JnuQvKebhoCyhDIztfL0nrNmiSYnvDbOgbSqgl&ccb=13-1&oh=06_Q3-9AbQKnrgac4NYcS8Jr6Vkg-P5mgkpdJmRRbzWOm2Vg2u2&oe=69D06CFB&_nc_sid=58080a" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar yellow">ROAS 2.24x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Advantage Catalog _ Silver Earring">Advantage Catalog _ Silver Earring</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€82</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€82.47</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1393194689218762&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628964373_1393194705885427_7918110261139672521_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=1uQHKJ2XYicQ7kNvwGAMMKv&_nc_oc=AdpzTijp9seuEg40Po8ihBpYg3CDPDM-pET5fDrMsiBxNLzQwFmGxQwVjzDUZowchoUIXfc-RFwGei5mfB8GYX2m&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQFq9_5o5EwtfyOEZpANfQkNfe5g2ZBelOnkoYi32ILWZRmXEF8PfAH5AG1et2WmFAr2ZTKFUNPSCg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af0uesQ4td0Bp3mObaiENrWloYFJHC0jYJmWXqAy4pEErA&oe=69D457CE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">20d</span></div>
-        <div class="metric-bar green">ROAS 5.54x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Girls want diamonds">Girls want diamonds</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€60</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€60.45</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a></div>
-      
-    </div>
-    <div class="country-section">
-      <div class="country-header">
-        <span class="flag">🇳🇱</span>
-        <h3>Netherlands</h3>
-        <span class="country-meta">7 ads · €1166 spend · 19 purchases</span>
-      </div>
-      
-      <div class="creative-grid">
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1503182555151836&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/639428304_1410538350852027_5352795322759621372_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=bq_rSU5CZnMQ7kNvwGTRUpj&_nc_oc=AdpljG7E_koPHM98bQYtyTr5ocv0O_0s2ib5fJAuxVmPbNCrgR76o-il5OwD5l5IxnKjb6CCa4wLC9WJgrFQvQe7&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEBAQtdoLzCsC6lvwItRXUq2vQQLyDB1AitBo7KpRowOtRkoMmzEpSEPkGbDc0mQTjkpAb7iCuMBw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0uAWm6VtC7YAGOlMCBcjhtQ0IlIL7Dk5GRN_cLnFIEuA&oe=69D481E6" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar yellow">ROAS 3.98x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ General _ 01 - Copy">Single video_ General _ 01 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€336</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">10</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€33.63</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=2554600684934269&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628733212_2554600698267601_1799893092029291553_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=aOUxDR9cenkQ7kNvwHSgG2T&_nc_oc=AdrIcdDJbR7CQOnIBdOXLglqrYZfweH3ZOkWzl0DONiBZsddfip52S6cLQEcGnLuci1ZFGVtW0wTKNucqEF1yLeG&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQHFi-tuAxymx29wWtryPBOv9harJMdKgUFWrb5TOGmVKBvU4u1yJtxF9eZGyrH-6Kro2sj_D84y1Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af3nohkt7GYJ1H_QFQ-7P-WUUFHVi_MJCXVsNl5mPNNc4w&oe=69D463EB" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">50d</span></div>
-        <div class="metric-bar red">ROAS 1.04x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Girls want diamonds - Copy">Girls want diamonds - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€331</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€82.8</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1471291751674250&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/601341679_1806213116737044_2657445879137729458_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=JtsZEmC4Y9IQ7kNvwGunqdV&_nc_oc=AdqCsL3gAZtBDHuU_TtFGcoMHrplqDVMprQ1wlLDqcSd8WnESNITurISmX2X4Mvv1QkbbUmo9pdX8vidVuwcWjsq&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEVZzBuV5Jr4llT-OxsDUJnwKpox6yFeNkcRhaeGxsbc2g20OogFXUxGPfjrsmYFSn44kmFYNouPA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af10gNF2Q9buoFMav3MjVSPV1b-dnGHRpkGyk01wgvYSAQ&oe=69D45FAD" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">69d</span></div>
-        <div class="metric-bar green">ROAS 4.9x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_120240202605190396 - Copy">Single video_120240202605190396 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€174</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€57.83</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1496094912527267&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/634021382_25916911571291515_1820394817589193350_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=O9GLgxaC6Y0Q7kNvwGk4RuT&_nc_oc=AdqMoVOvBYK6asG8wRxzaMALv_pcJjPMNKVpCvgRp0r_ZXKp1CKSg6cdIguFWKdsUSY-s6ui5SmovWf9trluakoQ&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQEy42yw4qMqSq2ISKUH9SF0jm8VHsEUb9aT5d9sjm60n-uzTM8TeQ07f-9DA7_70YurfJDutwR-Ww&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af253kzCuHM0PgjHb-5UCGFLwa1Klh-ixBYb5J-Ot3KrGw&oe=69D47EC8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">45d</span></div>
-        <div class="metric-bar red">ROAS 0.97x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ Ivy Earcuff">Single video_ Ivy Earcuff</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€93</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€93.26</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=188170608751180&selected_ad_ids=120242701472420396" target="_blank">
-        <div class="thumb-wrap">No preview</div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="Advantage Catalog _ Silver Earring">Advantage Catalog _ Silver Earring</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€87</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=920488517063583&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/620513752_920488553730246_5365195046670628031_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=YvHmt_UPze8Q7kNvwGcok9s&_nc_oc=Adpq5QRd32xD2cIU_CkRg3zqXM65mooNtYdDH2kuD7wtJxASXeMpQNKKQeah6hx24ZGA53DcNwss3C3SH0iCQcqZ&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQGMkJlZ0_Kj0hD-KOOVcuBFxzclZ-pheXj_5bZr2k_IbPcqcY2iz9RqZWMaOI2Ixjqx9BKb6ylnMQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_Af0W41xxA6jFzqisUsWoPrvZufAQ099nDCbgd_BkHEz-yw&oe=69D46841" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">69d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="*_120240202672680396">*_120240202672680396</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€75</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1503182541818504&id=1716870618566191" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/638425185_803668289436381_6496543057191828379_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=MjPuNYUdmQIQ7kNvwHN0eex&_nc_oc=AdqbSXWUW4ZicJVBpORvzJe8LqEAruMQ53cDOCkxrfrJXUuhg0ZFybg2i_yKHzcL3vFKxMvrVqKWgnUHRwa4L3gv&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=AMAkZV77UhwEl-F7WcT_Ig&_nc_tpa=Q5bMBQHbgr7E99G_6LCqaAP17PhJe-Fiy0QXLe72BEHn-u3MtZjoX1ugx3BbpTXTM02hkQs3NxuFIao1xg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1URq5kaVWUVDWXoW7shS6QGi1iADgAsizIV0vuoxmOww&oe=69D46D61" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">38d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="Single video_ General _ 02 - Copy">Single video_ General _ 02 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€71</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€70.58</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a></div>
-      
-    </div>
-  </div>
-
-  <hr class="div">
-
-  <!-- ─── Meta Performance ───────────────────────────────────────────────── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="pill pill-meta">META</span>
-      <h2>Performance</h2>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi"><div class="label">Spend</div><div class="value">€9236.15</div></div>
-      <div class="kpi"><div class="label">Impressions</div><div class="value">1,443,819</div></div>
-      <div class="kpi"><div class="label">Clicks</div><div class="value">18,030</div></div>
-      <div class="kpi"><div class="label">CTR</div><div class="value">1.25%</div></div>
-      <div class="kpi"><div class="label">Purchases</div><div class="value">351</div></div>
-      <div class="kpi"><div class="label">Revenue</div><div class="value">€86537.18</div></div>
-      <div class="kpi"><div class="label">ROAS</div><div class="value">9.37x</div></div>
-      <div class="kpi"><div class="label">Avg CPC</div><div class="value">€0.51</div></div>
-    </div>
-    <table>
-      <thead><tr><th>Campaign</th><th>Spend</th><th>Clicks</th><th>CTR</th><th>Purchases</th><th>CPP</th><th>ROAS</th></tr></thead>
-      <tbody>
-    <tr>
-      <td><strong>BE - X | CBO | Sales | Conversions | Prospecting</strong></td>
-      <td>€7025.37</td>
-      <td>15,309</td>
-      <td>118.60%</td>
-      <td>305</td>
-      <td>€23.03</td>
-      <td><span class="badge green">11.19x</span></td>
-    </tr>
-    <tr>
-      <td><strong>NL - X | CBO | Sales | Conversions | Prospecting</strong></td>
-      <td>€1167.47</td>
-      <td>1,350</td>
-      <td>136.83%</td>
-      <td>22</td>
-      <td>€53.07</td>
-      <td><span class="badge yellow">3.22x</span></td>
-    </tr>
-    <tr>
-      <td><strong>DE - X | ABO | Sales | Conversions | Prospecting</strong></td>
-      <td>€502.69</td>
-      <td>574</td>
-      <td>245.30%</td>
-      <td>11</td>
-      <td>€45.7</td>
-      <td><span class="badge yellow">2.63x</span></td>
-    </tr>
-    <tr>
-      <td><strong>DE - X | CBO | Sales | Conversions | Prospecting</strong></td>
-      <td>€367.21</td>
-      <td>561</td>
-      <td>307.72%</td>
-      <td>12</td>
-      <td>€30.6</td>
-      <td><span class="badge green">7.55x</span></td>
-    </tr>
-    <tr>
-      <td><strong>NL - X | ABO | Sales | Conversions | Prospecting</strong></td>
-      <td>€173.41</td>
-      <td>236</td>
-      <td>185.07%</td>
-      <td>1</td>
-      <td>€173.41</td>
-      <td><span class="badge red">0.55x</span></td>
-    </tr></tbody>
-    </table>
-
-    
-    <h3 style="margin:24px 0 10px;font-size:13px;color:#334155">Platform & Placement</h3>
-    <table>
-      <thead><tr><th>Platform</th><th>Placement</th><th>Spend</th><th>Purchases</th><th>CPP</th><th>ROAS</th><th>CTR</th><th>CPM</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>instagram stories</td>
-          <td>€4648</td>
-          <td>189</td>
-          <td>€24.59</td>
-          <td><span class="badge green">11.71x</span></td>
-          <td>132.17%</td>
-          <td>€5.39</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>feed</td>
-          <td>€3434</td>
-          <td>132</td>
-          <td>€26.02</td>
-          <td><span class="badge green">7.45x</span></td>
-          <td>114.13%</td>
-          <td>€8.75</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>instagram reels</td>
-          <td>€894</td>
-          <td>28</td>
-          <td>€31.94</td>
-          <td><span class="badge green">6.63x</span></td>
-          <td>112.69%</td>
-          <td>€5.57</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>feed</td>
-          <td>€209</td>
-          <td>1</td>
-          <td>€208.87</td>
-          <td><span class="badge yellow">2.66x</span></td>
-          <td>148.74%</td>
-          <td>€13.33</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>instagram explore grid home</td>
-          <td>€12</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>36.48%</td>
-          <td>€2.02</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>facebook reels</td>
-          <td>€9</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>44.88%</td>
-          <td>€7.80</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>facebook stories</td>
-          <td>€8</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>48.39%</td>
-          <td>€13.27</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>facebook reels overlay</td>
-          <td>€6</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>30.41%</td>
-          <td>€2.39</td>
-        </tr>
-        <tr>
-          <td><strong>audience_network</strong></td>
-          <td>an classic</td>
-          <td>€4</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>2949.64%</td>
-          <td>€29.28</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>instream video</td>
-          <td>€4</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>140.11%</td>
-          <td>€6.22</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>instagram explore</td>
-          <td>€3</td>
-          <td>1</td>
-          <td>€3.48</td>
-          <td><span class="badge green">18.82x</span></td>
-          <td>50.35%</td>
-          <td>€3.50</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>facebook notification</td>
-          <td>€2</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>55.87%</td>
-          <td>€8.77</td>
-        </tr>
-        <tr>
-          <td><strong>audience_network</strong></td>
-          <td>rewarded video</td>
-          <td>€1</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>1818.18%</td>
-          <td>€14.66</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>facebook profile feed</td>
-          <td>€1</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>72.99%</td>
-          <td>€5.26</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>marketplace</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€6.22</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>right hand column</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€1.26</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>search</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€4.00</td>
-        </tr>
-        <tr>
-          <td><strong>threads</strong></td>
-          <td>threads feed</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€5.00</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>instagram search</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€1.67</td>
-        </tr>
-      </tbody>
-    </table>
-
-    
-    <h3 style="margin:24px 0 10px;font-size:13px;color:#334155">Age & Gender</h3>
-    <table>
-      <thead><tr><th>Age</th><th>Gender</th><th>Spend</th><th>Purchases</th><th>CPP</th><th>ROAS</th><th>CTR</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>35-44</strong></td>
-          <td>female</td>
-          <td>€2732</td>
-          <td>97</td>
-          <td>€28.16</td>
-          <td><span class="badge green">8.22x</span></td>
-          <td>142.92%</td>
-        </tr>
-        <tr>
-          <td><strong>25-34</strong></td>
-          <td>female</td>
-          <td>€2593</td>
-          <td>91</td>
-          <td>€28.5</td>
-          <td><span class="badge green">6.35x</span></td>
-          <td>109.19%</td>
-        </tr>
-        <tr>
-          <td><strong>45-54</strong></td>
-          <td>female</td>
-          <td>€1572</td>
-          <td>46</td>
-          <td>€34.18</td>
-          <td><span class="badge green">8.49x</span></td>
-          <td>171.60%</td>
-        </tr>
-        <tr>
-          <td><strong>18-24</strong></td>
-          <td>female</td>
-          <td>€1460</td>
-          <td>62</td>
-          <td>€23.55</td>
-          <td><span class="badge green">4.3x</span></td>
-          <td>103.74%</td>
-        </tr>
-        <tr>
-          <td><strong>55-64</strong></td>
-          <td>female</td>
-          <td>€526</td>
-          <td>20</td>
-          <td>€26.28</td>
-          <td><span class="badge green">6.16x</span></td>
-          <td>239.90%</td>
-        </tr>
-        <tr>
-          <td><strong>65+</strong></td>
-          <td>female</td>
-          <td>€83</td>
-          <td>1</td>
-          <td>€82.59</td>
-          <td><span class="badge green">5.39x</span></td>
-          <td>211.93%</td>
-        </tr>
-        <tr>
-          <td><strong>25-34</strong></td>
-          <td>male</td>
-          <td>€73</td>
-          <td>1</td>
-          <td>€73.45</td>
-          <td><span class="badge red">1.09x</span></td>
-          <td>163.63%</td>
-        </tr>
-        <tr>
-          <td><strong>35-44</strong></td>
-          <td>male</td>
-          <td>€73</td>
-          <td>13</td>
-          <td>€5.63</td>
-          <td><span class="badge green">42.43x</span></td>
-          <td>117.19%</td>
-        </tr>
-        <tr>
-          <td><strong>45-54</strong></td>
-          <td>male</td>
-          <td>€35</td>
-          <td>15</td>
-          <td>€2.36</td>
-          <td><span class="badge green">562.22x</span></td>
-          <td>116.40%</td>
-        </tr>
-        <tr>
-          <td><strong>35-44</strong></td>
-          <td>unknown</td>
-          <td>€19</td>
-          <td>1</td>
-          <td>€19.16</td>
-          <td><span class="badge green">22.23x</span></td>
-          <td>114.14%</td>
-        </tr>
-        <tr>
-          <td><strong>18-24</strong></td>
-          <td>male</td>
-          <td>€18</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>88.71%</td>
-        </tr>
-        <tr>
-          <td><strong>55-64</strong></td>
-          <td>male</td>
-          <td>€15</td>
-          <td>1</td>
-          <td>€14.81</td>
-          <td><span class="badge yellow">3.04x</span></td>
-          <td>134.39%</td>
-        </tr>
-        <tr>
-          <td><strong>45-54</strong></td>
-          <td>unknown</td>
-          <td>€12</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>126.81%</td>
-        </tr>
-        <tr>
-          <td><strong>25-34</strong></td>
-          <td>unknown</td>
-          <td>€10</td>
-          <td>3</td>
-          <td>€3.19</td>
-          <td><span class="badge green">77.69x</span></td>
-          <td>111.99%</td>
-        </tr>
-        <tr>
-          <td><strong>18-24</strong></td>
-          <td>unknown</td>
-          <td>€8</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>108.50%</td>
-        </tr>
-        <tr>
-          <td><strong>55-64</strong></td>
-          <td>unknown</td>
-          <td>€5</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>207.37%</td>
-        </tr>
-        <tr>
-          <td><strong>65+</strong></td>
-          <td>male</td>
-          <td>€1</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>164.47%</td>
-        </tr>
-        <tr>
-          <td><strong>65+</strong></td>
-          <td>unknown</td>
-          <td>€1</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>1041.67%</td>
-        </tr>
-        <tr>
-          <td><strong>Unknown</strong></td>
-          <td>female</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-        </tr>
-        <tr>
-          <td><strong>Unknown</strong></td>
-          <td>male</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-        </tr>
-        <tr>
-          <td><strong>Unknown</strong></td>
-          <td>unknown</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  
-  <hr class="div">
-  <!-- ─── Google Ads Performance ────────────────────────────────────────── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="pill pill-google">GOOGLE</span>
-      <h2>Performance</h2>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi"><div class="label">Spend</div><div class="value">€1524.34</div></div>
-      <div class="kpi"><div class="label">Impressions</div><div class="value">83,000</div></div>
-      <div class="kpi"><div class="label">Clicks</div><div class="value">5,533</div></div>
-      <div class="kpi"><div class="label">CTR</div><div class="value">6.67%</div></div>
-      <div class="kpi"><div class="label">Avg CPC</div><div class="value">€0.28</div></div>
-      <div class="kpi"><div class="label">Conversions</div><div class="value">239.29000000000002</div></div>
-      <div class="kpi"><div class="label">Conv. Value</div><div class="value">€31169.92</div></div>
-      <div class="kpi"><div class="label">ROAS</div><div class="value">20.45x</div></div>
-    </div>
-    <p class="note">0 paused campaigns with no spend hidden</p>
-    <table>
-      <thead><tr><th>Campaign</th><th>Spend / Budget</th><th>Clicks</th><th>CTR</th><th>Conv</th><th>ROAS</th></tr></thead>
-      <tbody>
-    <tr>
-      <td><strong>BE - ENG | Shopping | General</strong><br><small class="tag">SHOPPING</small> <span class="tag warn">⚠️ budget cap</span></td>
-      <td>€614.49<br><small>€20.00/day</small></td>
-      <td>435</td>
-      <td>0.62%</td>
-      <td>3</td>
-      <td><span class="badge red">0.31x</span></td>
-    </tr>
-    <tr>
-      <td><strong>NL - NL | Conversions | Branded</strong><br><small class="tag">SEARCH</small></td>
-      <td>€457.10<br><small>€15.00/day</small></td>
-      <td>2,200</td>
-      <td>40.69%</td>
-      <td>102.55</td>
-      <td><span class="badge green">30.83x</span></td>
-    </tr>
-    <tr>
-      <td><strong>BE - NL | Conversions | Branded</strong><br><small class="tag">SEARCH</small> <span class="tag warn">⚠️ budget cap</span></td>
-      <td>€452.75<br><small>€15.00/day</small></td>
-      <td>2,898</td>
-      <td>41.71%</td>
-      <td>133.74</td>
-      <td><span class="badge green">37.3x</span></td>
-    </tr>
-    <tr>
-      <td><strong>S | DSA | ENG | BE NL vs eng</strong><br><small class="tag">SEARCH</small></td>
-      <td>€0.00<br><small>€10.00/day</small></td>
-      <td>0</td>
-      <td>0.00%</td>
-      <td>0</td>
-      <td><span class="badge grey">—</span></td>
-    </tr></tbody>
-    </table>
-    <h3 style="margin:20px 0 10px;font-size:13px;color:#334155">Keyword Opportunities</h3>
-    <table><thead><tr><th>Search Term</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>Conv</th><th>Action</th></tr></thead>
-    <tbody>
-    <tr><td>billion avenue antwerpen</td><td>105</td><td>32.01%</td><td>€24.84</td><td>3</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue oorbellen</td><td>63</td><td>35.80%</td><td>€12.61</td><td>6</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue oorbellen</td><td>46</td><td>31.94%</td><td>€6.44</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue ring</td><td>28</td><td>37.84%</td><td>€8.04</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue earcuff</td><td>25</td><td>39.06%</td><td>€4.56</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue earrings</td><td>23</td><td>71.88%</td><td>€3.89</td><td>1.242132</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>ear cuff</td><td>19</td><td>0.51%</td><td>€24.48</td><td>1</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue ring</td><td>17</td><td>39.53%</td><td>€4.43</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue earcuff</td><td>16</td><td>31.37%</td><td>€3.35</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>billion avenue verkooppunten</td><td>13</td><td>18.84%</td><td>€8.34</td><td>0</td><td><span class="badge green">Add</span></td></tr></tbody></table>
-    <h3 style="margin:20px 0 10px;font-size:13px;color:#334155">Negative Keyword Candidates</h3>
-    <table><thead><tr><th>Search Term</th><th>Spend</th><th>Clicks</th><th>CTR</th><th>Action</th></tr></thead>
-    <tbody>
-    <tr><td>earcuff</td><td>€9.83</td><td>7</td><td>0.55%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>my jewellery</td><td>€8.22</td><td>5</td><td>0.36%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>oorbellen</td><td>€7.46</td><td>5</td><td>0.26%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>apm monaco</td><td>€5.29</td><td>4</td><td>0.51%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>histoire d or</td><td>€4.11</td><td>3</td><td>1.45%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>boucle d oreille or</td><td>€3.88</td><td>2</td><td>1.68%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>earrings</td><td>€3.54</td><td>2</td><td>0.29%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>eline rosina</td><td>€3.46</td><td>3</td><td>1.78%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>ear cuffs</td><td>€3.41</td><td>2</td><td>0.50%</td><td><span class="badge red">Negative</span></td></tr>
-    <tr><td>juwelen</td><td>€3.36</td><td>2</td><td>0.74%</td><td><span class="badge red">Negative</span></td></tr></tbody></table>
-    
-    <h3 style="margin:20px 0 10px;font-size:13px;color:#334155">Device Breakdown</h3>
-    <table><thead><tr><th>Device</th><th>Spend</th><th>Clicks</th><th>CTR</th><th>Conv</th><th>ROAS</th></tr></thead>
-    <tbody>
-    <tr><td><strong>Mobile</strong></td><td>€1261.87 <small>(82.78%)</small></td><td>4,297</td><td>6.68%</td><td>176.248011</td><td><span class="badge green">17.56x</span></td></tr>
-    <tr><td><strong>Desktop</strong></td><td>€258.68 <small>(16.97%)</small></td><td>1,209</td><td>6.62%</td><td>61.03701</td><td><span class="badge green">33.98x</span></td></tr>
-    <tr><td><strong>Tablet</strong></td><td>€3.78 <small>(0.25%)</small></td><td>27</td><td>6.22%</td><td>2</td><td><span class="badge green">59.51x</span></td></tr></tbody></table>
-
-    <div class="action-list" style="margin-top:20px">
-        <div class="action-list-title">Action List — Google Ads</div>
-        
-        <div class="action-row">
-          <span class="action-num">1</span>
-          <span class="action-pill orange">💰 budget</span>
-          <span class="action-what">BE - ENG | Shopping | General</span>
-          <span class="action-why">Losing impressions to budget cap — increase daily budget</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">2</span>
-          <span class="action-pill orange">💰 budget</span>
-          <span class="action-what">BE - NL | Conversions | Branded</span>
-          <span class="action-why">Losing impressions to budget cap — increase daily budget</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">3</span>
-          <span class="action-pill green">➕ add</span>
-          <span class="action-what">billion avenue antwerpen</span>
-          <span class="action-why">105 clicks, not yet a keyword</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">4</span>
-          <span class="action-pill green">➕ add</span>
-          <span class="action-what">billion avenue oorbellen</span>
-          <span class="action-why">63 clicks, not yet a keyword</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">5</span>
-          <span class="action-pill green">➕ add</span>
-          <span class="action-what">billion avenue oorbellen</span>
-          <span class="action-why">46 clicks, not yet a keyword</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">6</span>
-          <span class="action-pill green">➕ add</span>
-          <span class="action-what">billion avenue ring</span>
-          <span class="action-why">28 clicks, not yet a keyword</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">7</span>
-          <span class="action-pill green">➕ add</span>
-          <span class="action-what">billion avenue earcuff</span>
-          <span class="action-why">25 clicks, not yet a keyword</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">8</span>
-          <span class="action-pill red">🚫 negative</span>
-          <span class="action-what">earcuff</span>
-          <span class="action-why">€10 wasted, 0 conv, low CTR</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">9</span>
-          <span class="action-pill red">🚫 negative</span>
-          <span class="action-what">my jewellery</span>
-          <span class="action-why">€8 wasted, 0 conv, low CTR</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">10</span>
-          <span class="action-pill red">🚫 negative</span>
-          <span class="action-what">oorbellen</span>
-          <span class="action-why">€7 wasted, 0 conv, low CTR</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">11</span>
-          <span class="action-pill red">🚫 negative</span>
-          <span class="action-what">apm monaco</span>
-          <span class="action-why">€5 wasted, 0 conv, low CTR</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">12</span>
-          <span class="action-pill red">🚫 negative</span>
-          <span class="action-what">histoire d or</span>
-          <span class="action-why">€4 wasted, 0 conv, low CTR</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">13</span>
-          <span class="action-pill yellow">📦 product</span>
-          <span class="action-what">BILLION AVENUE | GAYA SOLITAIRE RING | GOLD / LARG</span>
-          <span class="action-why">€76 spend, 0 conv</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">14</span>
-          <span class="action-pill yellow">📦 product</span>
-          <span class="action-what">BILLION AVENUE | GAYA SOLITAIRE RING | GOLD / SMAL</span>
-          <span class="action-why">€35 spend, 0 conv</span>
-        </div>
-        <div class="action-row">
-          <span class="action-num">15</span>
-          <span class="action-pill yellow">📦 product</span>
-          <span class="action-what">BILLION AVENUE | AVA CROSS NECKLACE | GOLD | Hypoa</span>
-          <span class="action-why">€31 spend, 0 conv</span>
-        </div>
-      </div>
-  </div>
-</div>
-</section>
-<section id="client-kamping-kitsch-club" class="client-section">
+  <section id="client-kamping-kitsch-club" class="client-section">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8fafc;color:#1e293b;font-size:14px}
@@ -1364,7 +142,7 @@
 <div class="client-content">
   <div class="page-header">
     <h1>Kamping Kitsch Club — Ads Report</h1>
-    <span style="color:#94a3b8;font-size:13px">2 April 2026 · Last 30 days</span>
+    <span style="color:#94a3b8;font-size:13px">9 April 2026 · Last 30 days</span>
   </div>
   <p class="sub">Meta Ads + Google Ads · Creative insights + Performance</p>
 
@@ -1382,86 +160,124 @@
       <div class="country-header">
         <span class="flag">🇧🇪</span>
         <h3>Belgium</h3>
-        <span class="country-meta">30 ads · €2573 spend · 142 purchases</span>
+        <span class="country-meta">30 ads · €2802 spend · 125 purchases</span>
       </div>
       
+      <div class="overview-box">
+        <div class="ov-cols">
+          <div class="ov-col">
+            <div class="ov-head green">✅ What's Working</div>
+            <div class="ov-text">• FIRST NEEMS videos are the engine: 3 Weeztix variants combined for 53 purchases at ROAS 7-11x with CPP €17-24 — consistent volume and efficiency at the highest spend in the account.
+<br>• TIKKET UPDEET #2 variants are efficiency kings: ROAS 12.97-17.3x at CPP €10-11, cheapest conversions in the entire account — scarcity/urgency messaging hits hardest.
+<br>• Weeztix destination wins every head-to-head: McDrummer Sold WT (ROAS 6.03x) vs Site (0.73x), TIKKET UPDEET WT variants crush Site variants. The pattern is undeniable and consistent across every creative concept.</div>
+            <div class="ov-head red" style="margin-top:14px">❌ What's Not Working</div>
+            <div class="ov-text">• McDrummer location variants (Aalst at 925% CTR, Stronteduur at 920% CTR) are pure engagement bait: €95 combined spend, zero purchases — people watch the spectacle but never click through to buy.
+<br>• Multi Creative _ Event is dead on arrival: €96 burned, 0 purchases — this audience converts on single video, not carousel or multi-asset formats.
+<br>• Website/Site destinations consistently bleed money vs Weeztix equivalents — McDrummer Sold Site lost money at ROAS 0.73x while the identical creative via Weeztix returned 6.03x.</div>
+          </div>
+          <div class="ov-col">
+            <div class="ov-head blue">⬆ Double Down On</div>
+            <div class="ov-text">• Produce more TIKKET UPDEET-style urgency videos — specifically the #2 format which converts at €10-11 CPP. This is your cheapest conversion path by a wide margin.
+<br>• Keep feeding the FIRST NEEMS lineup reveal machine with new artist announcements — it's your highest-volume format and scales reliably without ROAS degradation across variants.
+<br>• Aftermovie format has explosive upside: one variant hit 52.46x ROAS at €6.26 CPP. Produce multiple cuts with different opening hooks to isolate what made that variant a unicorn.</div>
+            <div class="ov-head orange" style="margin-top:14px">🛑 Kill or Rethink</div>
+            <div class="ov-text">• Pause all McDrummer location-specific variants immediately — Aalst and Stronteduur are burning cash on vanity views with zero revenue to show for it.
+<br>• Kill every Website/Site destination ad where a Weeztix equivalent exists or can be created — you are literally paying more for worse results on every single one.
+<br>• Retire Multi Creative _ Event format entirely and do not revisit — this Facebook audience converts on single video creative, period.</div>
+          </div>
+        </div>
+      </div>
       <div class="creative-grid">
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890642651071&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/626089951_920780040629770_6461806988518302695_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=apv_QA-jtroQ7kNvwEU3Eyr&_nc_oc=Adpkc03tkzcPhxTwxIOsMkvJzIeHsRHZhPyST4Nl3AkbPyHCVBGf4cSg73APxrTRsDi1CgD1HpMo1pKyl87HDQGG&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE3Axz_Z4nApkoeRMnDeMCfh2GzuSbQklFXQdu4cmz_We_KtpYtKZiIwlEg2KRwPVeF2Zh_lZCpaQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1hnPja555B21aLCBWrhcmD5A7G3DMk655EiIv0LWlGuQ&oe=69D465FE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">57d</span></div>
-        <div class="metric-bar green">ROAS 7.82x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120240021406600331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 7.33x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ FIRST NEEMS - WEEZTIX">VIDEO _ FIRST NEEMS - WEEZTIX</div>
-          
+          <div class="verdict">Your workhorse. 25 purchases at ROAS 7.33x — increase budget 20-30%.</div>
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€628</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">39</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€16.11</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€462</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">25</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€18.5</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848891605984308&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/626089951_920780040629770_6461806988518302695_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=apv_QA-jtroQ7kNvwEU3Eyr&_nc_oc=Adpkc03tkzcPhxTwxIOsMkvJzIeHsRHZhPyST4Nl3AkbPyHCVBGf4cSg73APxrTRsDi1CgD1HpMo1pKyl87HDQGG&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE3Axz_Z4nApkoeRMnDeMCfh2GzuSbQklFXQdu4cmz_We_KtpYtKZiIwlEg2KRwPVeF2Zh_lZCpaQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1hnPja555B21aLCBWrhcmD5A7G3DMk655EiIv0LWlGuQ&oe=69D465FE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">35d</span></div>
-        <div class="metric-bar green">ROAS 11.05x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120241009734650331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 10.83x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ FIRST NEEMS - WEEZTIX - Copy">VIDEO _ FIRST NEEMS - WEEZTIX - Copy</div>
-          
+          <div class="verdict">ROAS 10.83x on 12 purchases — let Meta allocate more spend here.</div>
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€427</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">23</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€18.55</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€294</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">12</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€24.47</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890495984419&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653712129_991805850042327_9089558973720819842_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6xXinh7ALkcQ7kNvwF00cYY&_nc_oc=AdoPfPGCKm89Q96w7gTwhlrPBLV-3s8eM-y_xVeLYrHvf8oqBTv7flhd4GwQ78xbUBqV2uzYlb-CPoCKNFixGcfY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE6o8vx3SvgSutgbdyGzUxfCFfvR2EDJyVlRhNPrfVQ-DAmJJWXsQeqngYehRMOJpqlPq074qEydA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1_fuatDJ0UYy82kMru8UKNP3PLY8JAQ0ZEddTqB5qO0w&oe=69D47F3B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 5.92x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242305234750331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 10.56x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ FIRST NEEMS - Weeztix">VIDEO _ FIRST NEEMS - Weeztix</div>
+          <div class="verdict">Best CPP of the NEEMS family at €16.90 with 16 purchases. Scale.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€270</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">16</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€16.9</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304941040331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar red">ROAS 1.48x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ TIKKET UPDEET #1">VIDEO _ TIKKET UPDEET #1</div>
+          <div class="verdict">€51 version at ROAS 26.67x — tiny budget gem, needs way more spend.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€180</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€22.49</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304300230331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 6.03x</div>
         <div class="card-body">
           <div class="ad-name" title="Video _ McDrummer Sold _ WT">Video _ McDrummer Sold _ WT</div>
-          
+          <div class="verdict">Scarcity via Weeztix works. ROAS 6x, 9 purchases. Solid mid-tier performer.</div>
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€140</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€17.49</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€149</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">9</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€16.54</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890515984417&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/645094242_902934212647526_6786201729455829806_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=SWAPJ4yALRgQ7kNvwGb3gqv&_nc_oc=AdqSskqx8ceIC08PNGQoP2OAC6hlb-mOBICL1xCRkzAp0bwkbXafzKnD_rA4tk_lmnbFcpua2LDuO3b2R-ywdape&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQG0Ziohii_klm8HIZ22Y01uXatL1cea2gkZSVPzB7kVYB9tKpjnVKewHlTWCvpf0-hR6Yzk71DrUw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af08RHG8gw-CopCK74PvExl1D0qGCPkEXkiBG4lkZxN9Bw&oe=69D484D2" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120241407073120331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar green">ROAS 5.93x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ CALLBOYS - Copy">VIDEO _ CALLBOYS - Copy</div>
-          
+          <div class="verdict">ROAS 5.93x on only 3 purchases. Promising signal, deserves more budget.</div>
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€105</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">€34.91</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890339317768&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628219828_3277397379100989_3061633280391582592_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=GioSvXATPEoQ7kNvwH_6IRc&_nc_oc=AdrSGBB6GP2sgM0D6SbU2wv_wsUzoAhzdkU0ipiRQDhyRvzVaaSquyULPiL8koqOG6BeRHc-5WoELMqLepCxqFdu&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFhUPZ2CZYmkQPUak0YFBmlQJr_S8ozTviZhX0fQvr79JXsD_LRwwpDJnr4F0_P2qfVjXfMBrpJOg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0EzANN-VeB2W9OVbV008VqL8krxSrbn3fHY80ZOdTtuQ&oe=69D4580D" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip old">57d</span></div>
-        <div class="metric-bar green">ROAS 40.86x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ WT">VIDEO _ AFTERMOEVIE _ WT</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€98</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">15</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€6.53</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1841292920077510&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/626089951_920780040629770_6461806988518302695_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=apv_QA-jtroQ7kNvwEU3Eyr&_nc_oc=Adpkc03tkzcPhxTwxIOsMkvJzIeHsRHZhPyST4Nl3AkbPyHCVBGf4cSg73APxrTRsDi1CgD1HpMo1pKyl87HDQGG&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQGQiVA3YFZBUpD3Os65gqYoDXvLgciVW3F2_rS8UvD-3GjWp3Pue9CgWBjM6OGDXP7cWVXHGuEoaQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0BvqKxK0-OEJaTIyn6h9J3_AuUmp7slVIbxC7u4QTZVA&oe=69D465FE" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940860331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar green">ROAS 9.12x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ FIRST NEEMS - Website">VIDEO _ FIRST NEEMS - Website</div>
-          
+          <div class="verdict">ROAS 9.12x but only 3 purchases on website — test switching to Weeztix.</div>
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€97</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
@@ -1470,343 +286,441 @@
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848891532650982&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/652792660_962087296256572_2859131120480175364_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=Y0Yt_QI0SKwQ7kNvwHTGDWu&_nc_oc=Adrmu2rr4dui6OyztOsMz3iVmr485UzRMMdSyAvMKEkd8T8moJaXxu_Dhn28OS4IiE8Pghb2ql_ZbjLoXeZ6D6K4&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFNhDOZY9heqKoleXPlrdsozp1Q7PPSGIJR1dPJEX4mXfvuR3s3joTXhOnVzzX94t7ctIeo-qEoVQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0kOYh2sUW4uuWKjZnZbFtsLqKI2wt3_j0EWJxDc9CzeA&oe=69D45B05" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">15d</span></div>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242151376070331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar grey">No purchases</div>
+        <div class="card-body">
+          <div class="ad-name" title="Multi Creative _ Event">Multi Creative _ Event</div>
+          <div class="verdict">€96 wasted, zero purchases. Multi-format is dead for this audience.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€96</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill pause">⏸ Pause</div>
+        </div>
+      </a>
+      <a class="creative-card mid" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304300200331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar red">ROAS 0.73x</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Sold _ Site">Video _ McDrummer Sold _ Site</div>
+          <div class="verdict">ROAS 0.73x losing money. WT version returns 6x on same creative. Kill.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€95</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€94.78</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill pause">⏸ Pause</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242009678620331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar yellow">ROAS 3.17x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ TIKKET UPDEET #3">VIDEO _ TIKKET UPDEET #3</div>
-          
+          <div class="verdict">ROAS 3.17x is mid-tier. Keep running but don't prioritize spend here.</div>
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€93</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">€31.06</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill keep">✓ Keep</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890595984409&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653880837_932808602580838_7475108023833672910_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=XwxUDHAQ_igQ7kNvwEuSNCJ&_nc_oc=AdrN9W-Koja_oWwGrQBssb8FVgtB6vWjicQKrFQZuT-GkHYzCMROF5UvUbpAV7OSLQ8VydeeWcZmX-EtjrV1ozu5&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQF5vhRwQAyAxjIDy3XaP7zz7pMA6YTxaRlz-sInZYxOJtj4FI3wjmQsBPpw4t3dgdhb5VdcRh-F4g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af2Y_X8mnkkA0ix-JsyNNK72rUSs4_MH11emK3oG7ZgnPg&oe=69D478F8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">15d</span></div>
-        <div class="metric-bar green">ROAS 13.01x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242009907020331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 12.97x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ TIKKET UPDEET #2 - Copy">VIDEO _ TIKKET UPDEET #2 - Copy</div>
-          
+          <div class="verdict">ROAS 12.97x at €11.49 CPP — second-best efficiency in the account.</div>
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€92</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€11.46</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€11.49</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1835656030641199&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/651767133_808666428344424_3991570842363390715_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=joPe32iSMEUQ7kNvwF2_01L&_nc_oc=AdqBv0J9_bmsIsUosctQOXfiLRe0qzJSU3O1uzhJRKJhRkpkyzdboTQJzBZl4Q2lr5zFs6_6gTVXh8vj5W5Tvnvt&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQETQD-C4tB8us9YorZCuWOC_E-ANg5_yjolI4zrUrnj7GYbfzGNpALRgdM2-vs4umfjzST9QYN3Fw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af30chcKUwZ6kighiccOpyiiOLfsxrLGaq1b3uKWdY1bGA&oe=69D45F71" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 17.32x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304941090331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 17.3x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ TIKKET UPDEET #2">VIDEO _ TIKKET UPDEET #2</div>
-          
+          <div class="verdict">ROAS 17.3x at €10.57 CPP — your most efficient ad. Scale aggressively.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€85</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€10.57</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304941070331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 4.84x</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Steen _ WT">Video _ McDrummer Steen _ WT</div>
+          <div class="verdict">ROAS 4.84x via Weeztix with 4 purchases. Modest but profitable.</div>
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€84</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€10.56</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€20.91</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940820331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 10.09x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ TIKKET UPDEET _ Site">VIDEO _ TIKKET UPDEET _ Site</div>
+          <div class="verdict">ROAS 10.09x but only 1 purchase on €57 — too thin to trust yet.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€57</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€56.92</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890285984440&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628219828_3277397379100989_3061633280391582592_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=GioSvXATPEoQ7kNvwH_6IRc&_nc_oc=AdrSGBB6GP2sgM0D6SbU2wv_wsUzoAhzdkU0ipiRQDhyRvzVaaSquyULPiL8koqOG6BeRHc-5WoELMqLepCxqFdu&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFhUPZ2CZYmkQPUak0YFBmlQJr_S8ozTviZhX0fQvr79JXsD_LRwwpDJnr4F0_P2qfVjXfMBrpJOg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0EzANN-VeB2W9OVbV008VqL8krxSrbn3fHY80ZOdTtuQ&oe=69D4580D" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">35d</span></div>
-        <div class="metric-bar green">ROAS 10.9x</div>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242607746310331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar grey">No purchases</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Aalst">Video _ McDrummer Aalst</div>
+          <div class="verdict">925% CTR, zero purchases. Viral entertainment, zero revenue. Pause now.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€52</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill pause">⏸ Pause</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120241996823080331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 26.67x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ TIKKET UPDEET #1">VIDEO _ TIKKET UPDEET #1</div>
+          <div class="verdict">€51 version at ROAS 26.67x — tiny budget gem, needs way more spend.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€51</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€12.85</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120241009734670331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 10.32x</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ WT - Copy">VIDEO _ AFTERMOEVIE _ WT - Copy</div>
-          
+          <div class="verdict">ROAS 10.32x but only 1 purchase — promising signal, needs more volume.</div>
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€80</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.63</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€51</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€50.99</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848890909317711&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653712129_991805850042327_9089558973720819842_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6xXinh7ALkcQ7kNvwF00cYY&_nc_oc=AdoPfPGCKm89Q96w7gTwhlrPBLV-3s8eM-y_xVeLYrHvf8oqBTv7flhd4GwQ78xbUBqV2uzYlb-CPoCKNFixGcfY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE6o8vx3SvgSutgbdyGzUxfCFfvR2EDJyVlRhNPrfVQ-DAmJJWXsQeqngYehRMOJpqlPq074qEydA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1_fuatDJ0UYy82kMru8UKNP3PLY8JAQ0ZEddTqB5qO0w&oe=69D47F3B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
+      <a class="creative-card mid" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304941060331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar red">ROAS 1.37x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ WT">VIDEO _ AFTERMOEVIE _ WT</div>
+          <div class="verdict">ROAS 52.46x at €6.26 CPP — best ROAS in account. Scale immediately.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€50</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€50.24</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120240021406610331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 52.46x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ WT">VIDEO _ AFTERMOEVIE _ WT</div>
+          <div class="verdict">ROAS 52.46x at €6.26 CPP — best ROAS in account. Scale immediately.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€50</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">8</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€6.26</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242151579800331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar grey">No purchases</div>
         <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Sold _ Site">Video _ McDrummer Sold _ Site</div>
+          <div class="ad-name" title="Video _ McDrummer Stronteduur">Video _ McDrummer Stronteduur</div>
+          <div class="verdict">920% CTR, zero purchases. Vanity clicks burning budget. Kill it now.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€43</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill pause">⏸ Pause</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242009618720331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 4.15x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ TIKKET UPDEET #2">VIDEO _ TIKKET UPDEET #2</div>
+          <div class="verdict">ROAS 17.3x at €10.57 CPP — your most efficient ad. Scale aggressively.</div>
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€43</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€21.3</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill scale">⬆ Scale</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242604116970331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 5.44x</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Gent">Video _ McDrummer Gent</div>
           
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€76</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">€38</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€38.08</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill test">? Test</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940830331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar yellow">ROAS 3.65x</div>
+        <div class="card-body">
+          <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ Site">VIDEO _ AFTERMOEVIE _ Site</div>
+          
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€38</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€37.85</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill test">? Test</div>
+        </div>
+      </a>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940790331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar grey">No purchases</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Steen _ Site">Video _ McDrummer Steen _ Site</div>
+          
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€38</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1826752718198197&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t45.1600-4/645292087_10241405292777238_2331284080287714729_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=1tUww5vbvLAQ7kNvwFAuxp4&_nc_oc=AdouWefuVF7wwIXK_EgRBl03KY6l923NNdrFv01fOkCO0VlXxB43KVgEN1iUcGIIu2-1QHueWThz1F_V-QiM74XU&_nc_zt=1&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQHDvd0rYE36A28mb9jtGWx6UsHOMFVj-LS3CVMXw5cOWPx9zE3L3L1ibVwAIXs2i8QEncGyKCbvRQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af3Jj1oHNNjeW6_q9O26yKuEj19P-8t6BspfzJP3-y2v1g&oe=69D489A0" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
-        <div class="metric-bar green">ROAS 5.78x</div>
-        <div class="card-body">
-          <div class="ad-name" title="STATIC _ CALLBOYS 1">STATIC _ CALLBOYS 1</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€62</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€30.9</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1837999947073474&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/629297732_1937534343806843_125989199813157110_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=MSspQuHG40wQ7kNvwGdClde&_nc_oc=AdqCjxWUwhAUfXW4r8tsDqOIXFreI0UtHPn_KhwgbFqyp_zBAG69TIqpB53HFziDFvTohd4b-M5foMgux93ouMNR&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQEnhPe7G3Wa6sT5pfam1SXE04MjPt6xwA1tnvO6JoYCmJ9Z1UJDJtkUccPofd7h2sGoOy2GNSpoig&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af1dU49Qkj5ZtEUzzxsiJUbyY-xzcxs33w6Ugur3U5o3wg&oe=69D4671C" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">13d</span></div>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242604635230331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar grey">No purchases</div>
         <div class="card-body">
-          <div class="ad-name" title="Multi Creative _ Event">Multi Creative _ Event</div>
+          <div class="ad-name" title="Video _ McDrummer Antwerpen">Video _ McDrummer Antwerpen</div>
           
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€62</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">€36</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1841300253410110&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/626087797_1516028519465066_6419369105547439681_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=y6x9WzZngBIQ7kNvwHaMJwv&_nc_oc=AdqGcgJ-pF51PSjTruQ1-m5vBiFeIjMvIXUwUSIdnntL6N9bd1rCCcyYlMObHMXkfFLtDe0Kyh2JO2rj1wf_NOLR&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFwlvOxsechJCg-fqOjCZ6B5FfMj4rwlTfCrKgcovrnyjL6ZIc9vI_s1ccsWD0_UzVi4c8cQ_rFmg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0jS5jmqCbEVsIbYEMf_GuG_ziEZE6CBtn_fps4Op-Vkw&oe=69D463B4" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar yellow">ROAS 2.34x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ FIRST NEEMS - Weeztix">VIDEO _ FIRST NEEMS - Weeztix</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€59</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€29.45</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1826752724864863&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t45.1600-4/647738764_10241405309537657_6014565046731014007_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=Wi0bXceT38UQ7kNvwE61TSB&_nc_oc=AdpPaOe3m90ATU5qOYMCj8doyzmQ_Vi9xUGRBoOnJAt0fS6l82zJIuUYldc7z5j38UuXJb3Jm7J4nmmMXaVe9_HJ&_nc_zt=1&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQG-1VFpKUdb4rBYhGW8USJHfbFMOKMAifyZmY0UWLB4qHGk5Ec8yeuvRU8a8A0m2dnKwt1T3YSblQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af3ZdemnXI9yCgETynXOGJ4ABn9ExCEntpH9Xczwri4TIQ&oe=69D47B05" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
-        <div class="metric-bar green">ROAS 8.72x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120241406886210331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 9.07x</div>
         <div class="card-body">
           <div class="ad-name" title="STATIC _ CALLBOYS 2">STATIC _ CALLBOYS 2</div>
           
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€53</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.61</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890189317783&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t45.1600-4/645292087_10241405292777238_2331284080287714729_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=1tUww5vbvLAQ7kNvwFAuxp4&_nc_oc=AdouWefuVF7wwIXK_EgRBl03KY6l923NNdrFv01fOkCO0VlXxB43KVgEN1iUcGIIu2-1QHueWThz1F_V-QiM74XU&_nc_zt=1&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQHnfKwiaiOShPFVwpx_p-6rdLcRbU8nURkSlk8UJS4ctcr6bAgQ0bbWOXrLzcMezrZChzf84xezPw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af00IOF7DmeT04BOTwT6SZm0rDi7untUIybTVT4a3DGDWQ&oe=69D489A0" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
-        <div class="metric-bar green">ROAS 4.28x</div>
-        <div class="card-body">
-          <div class="ad-name" title="STATIC _ CALLBOYS 1 - Copy">STATIC _ CALLBOYS 1 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€52</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">€36</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€52.39</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€35.95</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890905984378&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/652066048_916137908057213_1873630229726262583_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=cwueKQj2rwEQ7kNvwH__L_L&_nc_oc=AdoeqjZllt8pTvPGqVpQ80Hyo1mdQJ4lHsZ9t-3NOhR9ToEv3uV8icZuysAIEUhyUGwlr3Th_rqN1Hb45xpxMYzd&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFuI5h5GmKTFvg1SmIWBl4HP77Fi1JusJHyI3UYiBlBUXpQPNhwn9K4QAFenNEAVNCrog-hIXaLWQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1BSIiuiqS3fKkC5ZzVIgykHO6qz5ju--I-PDqrdJ-t5g&oe=69D476B8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">16d</span></div>
-        <div class="metric-bar green">ROAS 28.85x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ TIKKET UPDEET #1">VIDEO _ TIKKET UPDEET #1</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€48</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€11.88</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890605984408&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653880837_932808602580838_7475108023833672910_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=XwxUDHAQ_igQ7kNvwEuSNCJ&_nc_oc=AdrN9W-Koja_oWwGrQBssb8FVgtB6vWjicQKrFQZuT-GkHYzCMROF5UvUbpAV7OSLQ8VydeeWcZmX-EtjrV1ozu5&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQF5vhRwQAyAxjIDy3XaP7zz7pMA6YTxaRlz-sInZYxOJtj4FI3wjmQsBPpw4t3dgdhb5VdcRh-F4g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af2Y_X8mnkkA0ix-JsyNNK72rUSs4_MH11emK3oG7ZgnPg&oe=69D478F8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">15d</span></div>
-        <div class="metric-bar green">ROAS 4.16x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ TIKKET UPDEET #2">VIDEO _ TIKKET UPDEET #2</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€43</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€21.26</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848891582650977&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/652066048_916137908057213_1873630229726262583_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=cwueKQj2rwEQ7kNvwH__L_L&_nc_oc=AdoeqjZllt8pTvPGqVpQ80Hyo1mdQJ4lHsZ9t-3NOhR9ToEv3uV8icZuysAIEUhyUGwlr3Th_rqN1Hb45xpxMYzd&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFuI5h5GmKTFvg1SmIWBl4HP77Fi1JusJHyI3UYiBlBUXpQPNhwn9K4QAFenNEAVNCrog-hIXaLWQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1BSIiuiqS3fKkC5ZzVIgykHO6qz5ju--I-PDqrdJ-t5g&oe=69D476B8" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304300360331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar grey">No purchases</div>
         <div class="card-body">
           <div class="ad-name" title="VIDEO _ TIKKET UPDEET #1">VIDEO _ TIKKET UPDEET #1</div>
-          
+          <div class="verdict">€51 version at ROAS 26.67x — tiny budget gem, needs way more spend.</div>
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€32</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">€34</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
           </div>
-          <div class="action-pill test">? Test</div>
+          <div class="action-pill scale">⬆ Scale</div>
         </div>
       </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848890752651060&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653712129_991805850042327_9089558973720819842_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6xXinh7ALkcQ7kNvwF00cYY&_nc_oc=AdoPfPGCKm89Q96w7gTwhlrPBLV-3s8eM-y_xVeLYrHvf8oqBTv7flhd4GwQ78xbUBqV2uzYlb-CPoCKNFixGcfY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQEhN7wcZPE89NHzNzN_BB0Xwua0tum5BuAUJ1FXpYMX2ev14yo3vIJ4kyxG1ZGeUhNuqAuzVA-jlQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af2SVy_CXHLcv_BR_5qLlh1ludn9Msu63unZ5uBYprk7Vg&oe=69D47F3B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">13d</span></div>
+      <a class="creative-card low" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242596606330331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
         <div class="metric-bar grey">No purchases</div>
         <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Stronteduur">Video _ McDrummer Stronteduur</div>
+          <div class="ad-name" title="Video _ McDrummer Ostende">Video _ McDrummer Ostende</div>
           
           <div class="card-stats">
-            <div class="stat"><span class="stat-val">€30</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">€31</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
             <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1841275200079282&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/651767133_808666428344424_3991570842363390715_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=joPe32iSMEUQ7kNvwF2_01L&_nc_oc=AdqBv0J9_bmsIsUosctQOXfiLRe0qzJSU3O1uzhJRKJhRkpkyzdboTQJzBZl4Q2lr5zFs6_6gTVXh8vj5W5Tvnvt&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFOsc8gUQGVZYeYhTOYS_Kn9UBcAx9onABP-TlJszSmHHgQjlDWDEne2W9gZmbhmdMy5IV6CKX6hw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1PD_3u-OSeiZqCqBMuaJsIWZKjmMTqRLNJdCXBqsGFpQ&oe=69D45F71" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 21.25x</div>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940800331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 33.33x</div>
         <div class="card-body">
-          <div class="ad-name" title="VIDEO _ TIKKET UPDEET _ Site">VIDEO _ TIKKET UPDEET _ Site</div>
+          <div class="ad-name" title="Video _ McDrummer Miserie _ WT">Video _ McDrummer Miserie _ WT</div>
           
           <div class="card-stats">
             <div class="stat"><span class="stat-val">€27</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€27.02</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1848890219317780&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t45.1600-4/647738764_10241405309537657_6014565046731014007_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=Wi0bXceT38UQ7kNvwE61TSB&_nc_oc=AdpPaOe3m90ATU5qOYMCj8doyzmQ_Vi9xUGRBoOnJAt0fS6l82zJIuUYldc7z5j38UuXJb3Jm7J4nmmMXaVe9_HJ&_nc_zt=1&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQHzmDEUEgB2BGsdqJ-jYiOKFz3b5stc_j5gyBMEgMkTmQwVg2ZEgYEeHDfsMfwHGQ1Uf0BhcgI7Uw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af1Dt-j4Mc1V6HkjkZDa37JuGkjKxHtuw1ecbcqYY_OeoQ&oe=69D47B05" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
-        <div class="metric-bar yellow">ROAS 2.58x</div>
-        <div class="card-body">
-          <div class="ad-name" title="STATIC _ CALLBOYS 2 - Copy">STATIC _ CALLBOYS 2 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€27</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.72</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card mid" href="https://www.facebook.com/permalink.php?story_fbid=1820546432152159&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/628219828_3277397379100989_3061633280391582592_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=GioSvXATPEoQ7kNvwH_6IRc&_nc_oc=AdrSGBB6GP2sgM0D6SbU2wv_wsUzoAhzdkU0ipiRQDhyRvzVaaSquyULPiL8koqOG6BeRHc-5WoELMqLepCxqFdu&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFhUPZ2CZYmkQPUak0YFBmlQJr_S8ozTviZhX0fQvr79JXsD_LRwwpDJnr4F0_P2qfVjXfMBrpJOg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0EzANN-VeB2W9OVbV008VqL8krxSrbn3fHY80ZOdTtuQ&oe=69D4580D" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar yellow">ROAS 2.62x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ AFTERMOEVIE _ WT">VIDEO _ AFTERMOEVIE _ WT</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€26</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€26.33</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848890719317730&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/654586417_944149518080360_4914320204542140113_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=6G-MzXpAsZIQ7kNvwH5LEVt&_nc_oc=Ado2fBLjB-0sSSgu4Of_0B4fikyor4uvHlu0b-RFnd_8YKuFM9EaBRgHxglQH3xjJ3FPgLjXktvb2PH5ys0Zvy4Y&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQFwsbS9bNgknlizqI6mQIaJ3cWr2ed_51DU39JXBOUg5g6Bsw52-4lCi6h_pyamnZyIzsZIvIeBrg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af2Qv11BQ882OrYnG4vkMY8OgmAfc75qY0VWjsKbsY3FsA&oe=69D48A6D" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">13d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Steen">Video _ McDrummer Steen</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€24</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1841270500079752&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653712129_991805850042327_9089558973720819842_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6xXinh7ALkcQ7kNvwF00cYY&_nc_oc=AdoPfPGCKm89Q96w7gTwhlrPBLV-3s8eM-y_xVeLYrHvf8oqBTv7flhd4GwQ78xbUBqV2uzYlb-CPoCKNFixGcfY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE6o8vx3SvgSutgbdyGzUxfCFfvR2EDJyVlRhNPrfVQ-DAmJJWXsQeqngYehRMOJpqlPq074qEydA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1_fuatDJ0UYy82kMru8UKNP3PLY8JAQ0ZEddTqB5qO0w&oe=69D47F3B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 6.81x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Sold _ Site">Video _ McDrummer Sold _ Site</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€22</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">1</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€22.48</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890562651079&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/643687537_1218769693294347_5125184503761548217_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=yf-GFhvaPI8Q7kNvwGi09rA&_nc_oc=Ado3CvX3YfBqcTvciKANqHFY4_9uilT6CgBr2pBQ-4K-WEgwBS8uDpIAUQz6bH1-tDqeS2YepU4YVKosDBsvm9cH&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=5gBH-Ui1Xdoe_2QtBp-r9g&_nc_ss=7a32e&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af0gu75LqbBZyKcSKV5iaLsXI2iUMpqVDodKvJhnCBbm4A&oe=69D44476" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">35d</span></div>
-        <div class="metric-bar green">ROAS 46.99x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ TICKET WIJF 4 _ LAST 100 - Copy">VIDEO _ TICKET WIJF 4 _ LAST 100 - Copy</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€20</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">5</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€4.05</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848890579317744&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/645094242_902934212647526_6786201729455829806_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=SWAPJ4yALRgQ7kNvwGb3gqv&_nc_oc=AdqSskqx8ceIC08PNGQoP2OAC6hlb-mOBICL1xCRkzAp0bwkbXafzKnD_rA4tk_lmnbFcpua2LDuO3b2R-ywdape&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQHbrJjo7QtxeDKblO2RT8bLkT-gKPxC4dXx2rtvDUjcRA7bTRbBQakoAzpwLtkj-8A7ZcrcQAExnQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af0DHcWjZLGqYN-uz_Cz7l6CCTBBmQclVAOGpe8H5HltIA&oe=69D484D2" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">27d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ CALLBOYS">VIDEO _ CALLBOYS</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€20</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890592651076&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/643687537_1218769693294347_5125184503761548217_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=yf-GFhvaPI8Q7kNvwGi09rA&_nc_oc=Ado3CvX3YfBqcTvciKANqHFY4_9uilT6CgBr2pBQ-4K-WEgwBS8uDpIAUQz6bH1-tDqeS2YepU4YVKosDBsvm9cH&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&_nc_gid=5gBH-Ui1Xdoe_2QtBp-r9g&_nc_ss=7a32e&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_Af0gu75LqbBZyKcSKV5iaLsXI2iUMpqVDodKvJhnCBbm4A&oe=69D44476" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip mid">35d</span></div>
-        <div class="metric-bar green">ROAS 36.17x</div>
-        <div class="card-body">
-          <div class="ad-name" title="VIDEO _ TICKET WIJF 4 _ LAST 100">VIDEO _ TICKET WIJF 4 _ LAST 100</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€16</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">4</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€3.97</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card low" href="https://www.facebook.com/permalink.php?story_fbid=1848890689317733&id=649170475195365" target="_blank">
-        <div class="thumb-wrap">No preview<span class="age-chip fresh">3d</span></div>
-        <div class="metric-bar grey">No purchases</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Aalst">Video _ McDrummer Aalst</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€15</span><span class="stat-lbl">spend</span></div>
-            <div class="stat"><span class="stat-val">0</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">—</span><span class="stat-lbl">CPP</span></div>
-          </div>
-          <div class="action-pill test">? Test</div>
-        </div>
-      </a>
-      <a class="creative-card top" href="https://www.facebook.com/permalink.php?story_fbid=1848890525984416&id=649170475195365" target="_blank">
-        <div class="thumb-wrap"><img src="https://scontent-bru2-1.xx.fbcdn.net/v/t15.5256-10/653712129_991805850042327_9089558973720819842_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=6xXinh7ALkcQ7kNvwF00cYY&_nc_oc=AdoPfPGCKm89Q96w7gTwhlrPBLV-3s8eM-y_xVeLYrHvf8oqBTv7flhd4GwQ78xbUBqV2uzYlb-CPoCKNFixGcfY&_nc_zt=23&_nc_ht=scontent-bru2-1.xx&edm=AOgd6ZUEAAAA&_nc_gid=K4uIBsQFpR-37Y6wl7OREQ&_nc_tpa=Q5bMBQE6o8vx3SvgSutgbdyGzUxfCFfvR2EDJyVlRhNPrfVQ-DAmJJWXsQeqngYehRMOJpqlPq074qEydA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=b696e2&_nc_sid=58080a&oh=00_Af1_fuatDJ0UYy82kMru8UKNP3PLY8JAQ0ZEddTqB5qO0w&oe=69D47F3B" alt="" onerror="this.parentElement.classList.add('no-img');this.remove()"><span class="age-chip fresh">9d</span></div>
-        <div class="metric-bar green">ROAS 56.57x</div>
-        <div class="card-body">
-          <div class="ad-name" title="Video _ McDrummer Sold _ Site">Video _ McDrummer Sold _ Site</div>
-          
-          <div class="card-stats">
-            <div class="stat"><span class="stat-val">€15</span><span class="stat-lbl">spend</span></div>
             <div class="stat"><span class="stat-val">3</span><span class="stat-lbl">purch.</span></div>
-            <div class="stat"><span class="stat-val">€5.01</span><span class="stat-lbl">CPP</span></div>
+            <div class="stat"><span class="stat-val">€9.14</span><span class="stat-lbl">CPP</span></div>
+          </div>
+          <div class="action-pill test">? Test</div>
+        </div>
+      </a>
+      <a class="creative-card top" href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=2398112350279779&selected_ad_ids=120242304940810331" target="_blank">
+        <div class="thumb-wrap">No preview</div>
+        <div class="metric-bar green">ROAS 10.31x</div>
+        <div class="card-body">
+          <div class="ad-name" title="Video _ McDrummer Miserie _ Site">Video _ McDrummer Miserie _ Site</div>
+          
+          <div class="card-stats">
+            <div class="stat"><span class="stat-val">€27</span><span class="stat-lbl">spend</span></div>
+            <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">purch.</span></div>
+            <div class="stat"><span class="stat-val">€13.38</span><span class="stat-lbl">CPP</span></div>
           </div>
           <div class="action-pill test">? Test</div>
         </div>
       </a></div>
       
+      <div class="action-list">
+        <div class="action-list-title">Action List — Creative Team</div>
+        
+        <div class="action-row">
+          <span class="action-num">1</span>
+          <span class="action-pill green">⬆ scale</span>
+          <span class="action-what">VIDEO _ FIRST NEEMS - WEEZTIX</span>
+          <span class="action-why">Top volume winner, 25 purchases at ROAS 7.33x</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">2</span>
+          <span class="action-pill green">⬆ scale</span>
+          <span class="action-what">VIDEO _ TIKKET UPDEET #2</span>
+          <span class="action-why">Best efficiency in account, ROAS 17.3x at €10.57 CPP</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">3</span>
+          <span class="action-pill green">⬆ scale</span>
+          <span class="action-what">VIDEO _ TIKKET UPDEET #2 - Copy</span>
+          <span class="action-why">ROAS 12.97x at €11.49 CPP, proven duplicate</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">4</span>
+          <span class="action-pill green">⬆ scale</span>
+          <span class="action-what">VIDEO _ FIRST NEEMS - Weeztix</span>
+          <span class="action-why">Lowest CPP of NEEMS family at €16.90</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">5</span>
+          <span class="action-pill red">⏸ pause</span>
+          <span class="action-what">Multi Creative _ Event</span>
+          <span class="action-why">€96 spent, zero purchases, dead format</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">6</span>
+          <span class="action-pill red">⏸ pause</span>
+          <span class="action-what">Video _ McDrummer Aalst</span>
+          <span class="action-why">Zero purchases despite 925% CTR, engagement bait</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">7</span>
+          <span class="action-pill red">⏸ pause</span>
+          <span class="action-what">Video _ McDrummer Stronteduur</span>
+          <span class="action-why">Zero purchases despite 920% CTR, same problem</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">8</span>
+          <span class="action-pill red">⏸ pause</span>
+          <span class="action-what">Video _ McDrummer Sold _ Site</span>
+          <span class="action-why">ROAS 0.73x losing money, WT version does 6x</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">9</span>
+          <span class="action-pill red">⏸ pause</span>
+          <span class="action-what">VIDEO _ TIKKET UPDEET #1</span>
+          <span class="action-why">€180 variant at ROAS 1.48x bleeding budget</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">10</span>
+          <span class="action-pill blue">✏️ create</span>
+          <span class="action-what">Aftermovie Supercut — 3 versions with different opening 3-second hooks</span>
+          <span class="action-why">One aftermovie hit 52x ROAS while another hit 1.37x — the hook is the variable, produce cuts to find repeatable winners</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">11</span>
+          <span class="action-pill blue">✏️ create</span>
+          <span class="action-what">Final Tickets Countdown video with visible scarcity counter overlay</span>
+          <span class="action-why">TIKKET UPDEET urgency converts cheapest in account, push the format further with real-time ticket count visuals</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">12</span>
+          <span class="action-pill blue">✏️ create</span>
+          <span class="action-what">Artist Lineup Reveal Part 2 — next wave of name announcements</span>
+          <span class="action-why">FIRST NEEMS is your volume engine at 53 purchases across variants, feed it fresh artist content to sustain momentum</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">13</span>
+          <span class="action-pill blue">✏️ create</span>
+          <span class="action-what">Sold Out Zone / Stage Announcement video for upcoming events</span>
+          <span class="action-why">McDrummer Sold via WT converts at ROAS 6x, extend social-proof scarcity to other stages and events</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">14</span>
+          <span class="action-pill blue">✏️ create</span>
+          <span class="action-what">Crowd POV raw phone footage — user-generated hype reel, native Facebook feel</span>
+          <span class="action-why">Untested angle that complements polished aftermovies, lower production cost, high authenticity for Facebook feed</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">15</span>
+          <span class="action-pill yellow">🧪 test</span>
+          <span class="action-what">Switch all Site-destination ads to Weeztix landing page</span>
+          <span class="action-why">WT outperforms Site in every single head-to-head, validate with remaining Site ads</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">16</span>
+          <span class="action-pill yellow">🧪 test</span>
+          <span class="action-what">Aftermovie with 3 different opening hooks — same body content, different first 3 seconds</span>
+          <span class="action-why">Isolate why one AFTERMOEVIE WT hit 52x while identical name hit 1.37x — the hook decides everything</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">17</span>
+          <span class="action-pill yellow">🧪 test</span>
+          <span class="action-what">TIKKET UPDEET at different scarcity levels: 50% sold vs 80% sold vs final tickets</span>
+          <span class="action-why">#2 massively outperforms #1 and #3 — find the optimal urgency threshold that triggers purchase</span>
+        </div>
+        <div class="action-row">
+          <span class="action-num">18</span>
+          <span class="action-pill yellow">🧪 test</span>
+          <span class="action-what">CALLBOYS creative rebuilt for Weeztix destination with fresh cut</span>
+          <span class="action-why">ROAS 5.93x on limited €105 spend, only Copy variant exists — deserves proper WT test at scale</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1819,59 +733,59 @@
       <h2>Performance</h2>
     </div>
     <div class="kpi-grid">
-      <div class="kpi"><div class="label">Spend</div><div class="value">€2694.40</div></div>
-      <div class="kpi"><div class="label">Impressions</div><div class="value">969,930</div></div>
-      <div class="kpi"><div class="label">Clicks</div><div class="value">34,801</div></div>
-      <div class="kpi"><div class="label">CTR</div><div class="value">3.59%</div></div>
-      <div class="kpi"><div class="label">Purchases</div><div class="value">147</div></div>
-      <div class="kpi"><div class="label">Revenue</div><div class="value">€26854.00</div></div>
-      <div class="kpi"><div class="label">ROAS</div><div class="value">9.97x</div></div>
+      <div class="kpi"><div class="label">Spend</div><div class="value">€3103.11</div></div>
+      <div class="kpi"><div class="label">Impressions</div><div class="value">1,165,714</div></div>
+      <div class="kpi"><div class="label">Clicks</div><div class="value">40,791</div></div>
+      <div class="kpi"><div class="label">CTR</div><div class="value">3.50%</div></div>
+      <div class="kpi"><div class="label">Purchases</div><div class="value">140</div></div>
+      <div class="kpi"><div class="label">Revenue</div><div class="value">€26014.42</div></div>
+      <div class="kpi"><div class="label">ROAS</div><div class="value">8.38x</div></div>
       <div class="kpi"><div class="label">Avg CPC</div><div class="value">€0.08</div></div>
     </div>
     <table>
       <thead><tr><th>Campaign</th><th>Spend</th><th>Clicks</th><th>CTR</th><th>Purchases</th><th>CPP</th><th>ROAS</th></tr></thead>
       <tbody>
     <tr>
-      <td><strong>BE - X | CBO | Conversions | Remarketing</strong></td>
-      <td>€1089.91</td>
-      <td>12,106</td>
-      <td>340.81%</td>
-      <td>76</td>
-      <td>€14.34</td>
-      <td><span class="badge green">12.18x</span></td>
+      <td><strong>BE - X | ABO | Conversions | Prospecting</strong></td>
+      <td>€984.62</td>
+      <td>11,086</td>
+      <td>265.56%</td>
+      <td>48</td>
+      <td>€20.51</td>
+      <td><span class="badge green">8.12x</span></td>
     </tr>
     <tr>
       <td><strong>BE - X | CBO | Conversions | Prospecting</strong></td>
-      <td>€1080.69</td>
-      <td>13,313</td>
-      <td>331.65%</td>
-      <td>54</td>
-      <td>€20.01</td>
-      <td><span class="badge green">9.46x</span></td>
+      <td>€939.19</td>
+      <td>10,734</td>
+      <td>308.96%</td>
+      <td>38</td>
+      <td>€24.72</td>
+      <td><span class="badge green">8.24x</span></td>
     </tr>
     <tr>
-      <td><strong>BE - X | ABO | Conversions | Prospecting</strong></td>
-      <td>€359.74</td>
-      <td>4,446</td>
-      <td>303.68%</td>
-      <td>17</td>
-      <td>€21.16</td>
-      <td><span class="badge green">9.31x</span></td>
+      <td><strong>BE - X | CBO | Conversions | Remarketing</strong></td>
+      <td>€827.17</td>
+      <td>8,851</td>
+      <td>334.56%</td>
+      <td>52</td>
+      <td>€15.91</td>
+      <td><span class="badge green">11.84x</span></td>
     </tr>
     <tr>
       <td><strong>BE - X | ABO | Traffic</strong></td>
-      <td>€102.30</td>
-      <td>3,989</td>
-      <td>1005.75%</td>
-      <td>0</td>
-      <td>—</td>
-      <td><span class="badge grey">—</span></td>
+      <td>€256.04</td>
+      <td>8,643</td>
+      <td>936.73%</td>
+      <td>2</td>
+      <td>€128.02</td>
+      <td><span class="badge red">1.89x</span></td>
     </tr>
     <tr>
       <td><strong>BE - X | ABO | Event Responses</strong></td>
-      <td>€61.76</td>
-      <td>947</td>
-      <td>347.69%</td>
+      <td>€96.09</td>
+      <td>1,477</td>
+      <td>335.70%</td>
       <td>0</td>
       <td>—</td>
       <td><span class="badge grey">—</span></td>
@@ -1886,132 +800,132 @@
         <tr>
           <td><strong>facebook</strong></td>
           <td>feed</td>
-          <td>€1955</td>
-          <td>112</td>
-          <td>€17.46</td>
-          <td><span class="badge green">10.24x</span></td>
-          <td>433.71%</td>
-          <td>€2.84</td>
+          <td>€2108</td>
+          <td>89</td>
+          <td>€23.68</td>
+          <td><span class="badge green">8.18x</span></td>
+          <td>429.75%</td>
+          <td>€2.76</td>
         </tr>
         <tr>
           <td><strong>instagram</strong></td>
           <td>instagram stories</td>
-          <td>€214</td>
-          <td>11</td>
-          <td>€19.44</td>
-          <td><span class="badge green">12.32x</span></td>
-          <td>88.15%</td>
-          <td>€2.86</td>
+          <td>€292</td>
+          <td>15</td>
+          <td>€19.48</td>
+          <td><span class="badge green">8.94x</span></td>
+          <td>81.46%</td>
+          <td>€2.74</td>
         </tr>
         <tr>
           <td><strong>instagram</strong></td>
           <td>instagram reels</td>
-          <td>€150</td>
-          <td>5</td>
-          <td>€29.96</td>
-          <td><span class="badge green">7.04x</span></td>
-          <td>176.99%</td>
-          <td>€2.81</td>
-        </tr>
-        <tr>
-          <td><strong>instagram</strong></td>
-          <td>feed</td>
-          <td>€142</td>
-          <td>1</td>
-          <td>€141.99</td>
-          <td><span class="badge red">0.97x</span></td>
-          <td>189.87%</td>
-          <td>€3.60</td>
+          <td>€217</td>
+          <td>12</td>
+          <td>€18.07</td>
+          <td><span class="badge green">7.41x</span></td>
+          <td>171.31%</td>
+          <td>€2.68</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>facebook reels</td>
-          <td>€128</td>
-          <td>7</td>
-          <td>€18.33</td>
-          <td><span class="badge green">9.38x</span></td>
-          <td>255.05%</td>
-          <td>€2.08</td>
+          <td>€190</td>
+          <td>6</td>
+          <td>€31.65</td>
+          <td><span class="badge green">4.89x</span></td>
+          <td>323.26%</td>
+          <td>€2.06</td>
+        </tr>
+        <tr>
+          <td><strong>instagram</strong></td>
+          <td>feed</td>
+          <td>€159</td>
+          <td>2</td>
+          <td>€79.25</td>
+          <td><span class="badge yellow">2.18x</span></td>
+          <td>175.34%</td>
+          <td>€3.42</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>facebook stories</td>
-          <td>€44</td>
-          <td>2</td>
-          <td>€22.12</td>
-          <td><span class="badge green">8.36x</span></td>
-          <td>118.87%</td>
-          <td>€4.35</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>instream video</td>
-          <td>€14</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>88.39%</td>
-          <td>€1.28</td>
+          <td>€47</td>
+          <td>4</td>
+          <td>€11.79</td>
+          <td><span class="badge green">23.8x</span></td>
+          <td>111.28%</td>
+          <td>€4.20</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>facebook reels overlay</td>
-          <td>€12</td>
-          <td>4</td>
-          <td>€2.89</td>
-          <td><span class="badge green">36.88x</span></td>
-          <td>15.69%</td>
-          <td>€0.57</td>
+          <td>€18</td>
+          <td>6</td>
+          <td>€3.05</td>
+          <td><span class="badge green">34.57x</span></td>
+          <td>17.47%</td>
+          <td>€0.56</td>
+        </tr>
+        <tr>
+          <td><strong>facebook</strong></td>
+          <td>instream video</td>
+          <td>€18</td>
+          <td>1</td>
+          <td>€17.6</td>
+          <td><span class="badge yellow">3.92x</span></td>
+          <td>82.40%</td>
+          <td>€1.13</td>
         </tr>
         <tr>
           <td><strong>audience_network</strong></td>
           <td>rewarded video</td>
-          <td>€9</td>
-          <td>1</td>
-          <td>€9.16</td>
-          <td><span class="badge green">60.26x</span></td>
-          <td>4604.41%</td>
-          <td>€11.88</td>
+          <td>€17</td>
+          <td>2</td>
+          <td>€8.53</td>
+          <td><span class="badge green">66.01x</span></td>
+          <td>4523.34%</td>
+          <td>€8.47</td>
         </tr>
         <tr>
           <td><strong>audience_network</strong></td>
           <td>an classic</td>
-          <td>€9</td>
+          <td>€13</td>
           <td>2</td>
-          <td>€4.42</td>
-          <td><span class="badge green">28.54x</span></td>
-          <td>2359.83%</td>
-          <td>€7.39</td>
+          <td>€6.72</td>
+          <td><span class="badge green">18.76x</span></td>
+          <td>2483.25%</td>
+          <td>€6.00</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>facebook notification</td>
-          <td>€8</td>
-          <td>1</td>
-          <td>€8.01</td>
-          <td><span class="badge green">16.89x</span></td>
-          <td>202.90%</td>
-          <td>€3.32</td>
+          <td>€10</td>
+          <td>0</td>
+          <td>—</td>
+          <td><span class="badge grey">—</span></td>
+          <td>159.56%</td>
+          <td>€3.14</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>search</td>
-          <td>€5</td>
+          <td>€8</td>
           <td>1</td>
-          <td>€5.28</td>
-          <td><span class="badge green">13.07x</span></td>
-          <td>137.47%</td>
-          <td>€2.07</td>
+          <td>€8.02</td>
+          <td><span class="badge green">8.6x</span></td>
+          <td>96.78%</td>
+          <td>€1.94</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
           <td>marketplace</td>
-          <td>€3</td>
+          <td>€4</td>
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>16.19%</td>
-          <td>€1.40</td>
+          <td>19.35%</td>
+          <td>€1.29</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
@@ -2020,8 +934,8 @@
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>105.26%</td>
-          <td>€2.21</td>
+          <td>191.82%</td>
+          <td>€1.89</td>
         </tr>
         <tr>
           <td><strong>instagram</strong></td>
@@ -2030,8 +944,18 @@
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>303.03%</td>
-          <td>€1.92</td>
+          <td>280.37%</td>
+          <td>€2.06</td>
+        </tr>
+        <tr>
+          <td><strong>threads</strong></td>
+          <td>threads feed</td>
+          <td>€0</td>
+          <td>0</td>
+          <td>—</td>
+          <td><span class="badge grey">—</span></td>
+          <td>689.66%</td>
+          <td>€3.79</td>
         </tr>
         <tr>
           <td><strong>facebook</strong></td>
@@ -2041,27 +965,7 @@
           <td>—</td>
           <td><span class="badge grey">—</span></td>
           <td>0.00%</td>
-          <td>€0.68</td>
-        </tr>
-        <tr>
-          <td><strong>threads</strong></td>
-          <td>threads feed</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>1428.57%</td>
-          <td>€2.14</td>
-        </tr>
-        <tr>
-          <td><strong>facebook</strong></td>
-          <td>biz disco feed</td>
-          <td>€0</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>0.00%</td>
-          <td>€0.63</td>
+          <td>€0.64</td>
         </tr>
         <tr>
           <td><strong>instagram</strong></td>
@@ -2071,7 +975,17 @@
           <td>—</td>
           <td><span class="badge grey">—</span></td>
           <td>0.00%</td>
-          <td>€0.12</td>
+          <td>€0.21</td>
+        </tr>
+        <tr>
+          <td><strong>facebook</strong></td>
+          <td>biz disco feed</td>
+          <td>€0</td>
+          <td>0</td>
+          <td>—</td>
+          <td><span class="badge grey">—</span></td>
+          <td>0.00%</td>
+          <td>€0.59</td>
         </tr>
         <tr>
           <td><strong>messenger</strong></td>
@@ -2081,7 +995,7 @@
           <td>—</td>
           <td><span class="badge grey">—</span></td>
           <td>0.00%</td>
-          <td>€1.43</td>
+          <td>€0.83</td>
         </tr>
       </tbody>
     </table>
@@ -2094,101 +1008,110 @@
         <tr>
           <td><strong>25-34</strong></td>
           <td>male</td>
-          <td>€632</td>
+          <td>€755</td>
           <td>25</td>
-          <td>€25.3</td>
-          <td><span class="badge green">6.41x</span></td>
-          <td>308.01%</td>
+          <td>€30.21</td>
+          <td><span class="badge green">4.22x</span></td>
+          <td>296.33%</td>
         </tr>
         <tr>
           <td><strong>35-44</strong></td>
           <td>male</td>
-          <td>€436</td>
-          <td>18</td>
-          <td>€24.24</td>
-          <td><span class="badge green">6.85x</span></td>
-          <td>433.36%</td>
+          <td>€500</td>
+          <td>17</td>
+          <td>€29.44</td>
+          <td><span class="badge green">6.38x</span></td>
+          <td>444.35%</td>
         </tr>
         <tr>
           <td><strong>25-34</strong></td>
           <td>female</td>
-          <td>€383</td>
-          <td>24</td>
-          <td>€15.95</td>
-          <td><span class="badge green">15.27x</span></td>
-          <td>302.92%</td>
+          <td>€398</td>
+          <td>25</td>
+          <td>€15.94</td>
+          <td><span class="badge green">14.1x</span></td>
+          <td>274.43%</td>
+        </tr>
+        <tr>
+          <td><strong>18-24</strong></td>
+          <td>male</td>
+          <td>€356</td>
+          <td>18</td>
+          <td>€19.79</td>
+          <td><span class="badge green">6.57x</span></td>
+          <td>186.49%</td>
         </tr>
         <tr>
           <td><strong>35-44</strong></td>
           <td>female</td>
-          <td>€301</td>
-          <td>19</td>
-          <td>€15.84</td>
-          <td><span class="badge green">11.72x</span></td>
-          <td>404.26%</td>
-        </tr>
-        <tr>
-          <td><strong>18-24</strong></td>
-          <td>male</td>
-          <td>€283</td>
-          <td>16</td>
-          <td>€17.7</td>
-          <td><span class="badge green">5.39x</span></td>
-          <td>204.02%</td>
+          <td>€310</td>
+          <td>13</td>
+          <td>€23.85</td>
+          <td><span class="badge green">9.3x</span></td>
+          <td>376.54%</td>
         </tr>
         <tr>
           <td><strong>45-54</strong></td>
           <td>male</td>
-          <td>€227</td>
-          <td>14</td>
-          <td>€16.18</td>
-          <td><span class="badge green">14.81x</span></td>
-          <td>521.85%</td>
-        </tr>
-        <tr>
-          <td><strong>18-24</strong></td>
-          <td>female</td>
-          <td>€177</td>
-          <td>14</td>
-          <td>€12.62</td>
-          <td><span class="badge green">16.19x</span></td>
-          <td>228.72%</td>
-        </tr>
-        <tr>
-          <td><strong>45-54</strong></td>
-          <td>female</td>
-          <td>€132</td>
+          <td>€267</td>
           <td>12</td>
-          <td>€11.02</td>
-          <td><span class="badge green">13.81x</span></td>
-          <td>514.18%</td>
+          <td>€22.27</td>
+          <td><span class="badge green">11.09x</span></td>
+          <td>537.90%</td>
+        </tr>
+        <tr>
+          <td><strong>18-24</strong></td>
+          <td>female</td>
+          <td>€205</td>
+          <td>17</td>
+          <td>€12.04</td>
+          <td><span class="badge green">16.25x</span></td>
+          <td>202.59%</td>
+        </tr>
+        <tr>
+          <td><strong>45-54</strong></td>
+          <td>female</td>
+          <td>€147</td>
+          <td>9</td>
+          <td>€16.3</td>
+          <td><span class="badge green">8.81x</span></td>
+          <td>502.71%</td>
         </tr>
         <tr>
           <td><strong>55-64</strong></td>
           <td>male</td>
-          <td>€63</td>
-          <td>2</td>
-          <td>€31.7</td>
-          <td><span class="badge green">4.84x</span></td>
-          <td>675.13%</td>
+          <td>€81</td>
+          <td>1</td>
+          <td>€80.5</td>
+          <td><span class="badge red">1.71x</span></td>
+          <td>698.10%</td>
         </tr>
         <tr>
           <td><strong>55-64</strong></td>
           <td>female</td>
-          <td>€33</td>
+          <td>€42</td>
           <td>1</td>
-          <td>€32.72</td>
-          <td><span class="badge green">4.22x</span></td>
-          <td>814.90%</td>
+          <td>€42.28</td>
+          <td><span class="badge green">16.84x</span></td>
+          <td>809.57%</td>
         </tr>
         <tr>
           <td><strong>65+</strong></td>
           <td>male</td>
-          <td>€9</td>
+          <td>€14</td>
           <td>1</td>
-          <td>€8.64</td>
-          <td><span class="badge green">34.14x</span></td>
-          <td>876.49%</td>
+          <td>€14.16</td>
+          <td><span class="badge green">20.83x</span></td>
+          <td>895.89%</td>
+        </tr>
+        <tr>
+          <td><strong>65+</strong></td>
+          <td>female</td>
+          <td>€8</td>
+          <td>0</td>
+          <td>—</td>
+          <td><span class="badge grey">—</span></td>
+          <td>1056.13%</td>
         </tr>
         <tr>
           <td><strong>35-44</strong></td>
@@ -2197,43 +1120,34 @@
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>528.12%</td>
+          <td>506.83%</td>
         </tr>
         <tr>
           <td><strong>25-34</strong></td>
           <td>unknown</td>
-          <td>€4</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>251.32%</td>
-        </tr>
-        <tr>
-          <td><strong>65+</strong></td>
-          <td>female</td>
-          <td>€4</td>
-          <td>0</td>
-          <td>—</td>
-          <td><span class="badge grey">—</span></td>
-          <td>873.33%</td>
+          <td>€5</td>
+          <td>1</td>
+          <td>€5.43</td>
+          <td><span class="badge green">12.71x</span></td>
+          <td>229.75%</td>
         </tr>
         <tr>
           <td><strong>18-24</strong></td>
           <td>unknown</td>
-          <td>€3</td>
+          <td>€5</td>
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>148.44%</td>
+          <td>79.16%</td>
         </tr>
         <tr>
           <td><strong>45-54</strong></td>
           <td>unknown</td>
-          <td>€1</td>
+          <td>€2</td>
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>595.61%</td>
+          <td>441.53%</td>
         </tr>
         <tr>
           <td><strong>55-64</strong></td>
@@ -2242,7 +1156,7 @@
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>721.65%</td>
+          <td>862.07%</td>
         </tr>
         <tr>
           <td><strong>65+</strong></td>
@@ -2251,7 +1165,7 @@
           <td>0</td>
           <td>—</td>
           <td><span class="badge grey">—</span></td>
-          <td>909.09%</td>
+          <td>454.55%</td>
         </tr>
         <tr>
           <td><strong>Unknown</strong></td>
@@ -2267,6 +1181,8 @@
   </div>
 
   
+
+  
   <hr class="div">
   <!-- ─── Google Ads Performance ────────────────────────────────────────── -->
   <div class="section">
@@ -2275,14 +1191,14 @@
       <h2>Performance</h2>
     </div>
     <div class="kpi-grid">
-      <div class="kpi"><div class="label">Spend</div><div class="value">€1019.57</div></div>
-      <div class="kpi"><div class="label">Impressions</div><div class="value">41,915</div></div>
-      <div class="kpi"><div class="label">Clicks</div><div class="value">7,074</div></div>
-      <div class="kpi"><div class="label">CTR</div><div class="value">16.88%</div></div>
-      <div class="kpi"><div class="label">Avg CPC</div><div class="value">€0.14</div></div>
-      <div class="kpi"><div class="label">Conversions</div><div class="value">446.39</div></div>
-      <div class="kpi"><div class="label">Conv. Value</div><div class="value">€78004.27</div></div>
-      <div class="kpi"><div class="label">ROAS</div><div class="value">76.51x</div></div>
+      <div class="kpi"><div class="label">Spend</div><div class="value">€1316.66</div></div>
+      <div class="kpi"><div class="label">Impressions</div><div class="value">45,879</div></div>
+      <div class="kpi"><div class="label">Clicks</div><div class="value">6,761</div></div>
+      <div class="kpi"><div class="label">CTR</div><div class="value">14.74%</div></div>
+      <div class="kpi"><div class="label">Avg CPC</div><div class="value">€0.19</div></div>
+      <div class="kpi"><div class="label">Conversions</div><div class="value">393.48</div></div>
+      <div class="kpi"><div class="label">Conv. Value</div><div class="value">€68452.49</div></div>
+      <div class="kpi"><div class="label">ROAS</div><div class="value">51.99x</div></div>
     </div>
     <p class="note">0 paused campaigns with no spend hidden</p>
     <table>
@@ -2290,19 +1206,19 @@
       <tbody>
     <tr>
       <td><strong>BE - NL | Search | Brand</strong><br><small class="tag">SEARCH</small> <span class="tag warn">⚠️ budget cap</span></td>
-      <td>€544.74<br><small>€35.00/day</small></td>
-      <td>5,866</td>
-      <td>30.15%</td>
-      <td>377.11</td>
-      <td><span class="badge green">125.59x</span></td>
+      <td>€703.36<br><small>€35.00/day</small></td>
+      <td>5,401</td>
+      <td>27.21%</td>
+      <td>295.5</td>
+      <td><span class="badge green">75.31x</span></td>
     </tr>
     <tr>
       <td><strong>BE - X | Pmax | General</strong><br><small class="tag">PERFORMANCE_MAX</small></td>
-      <td>€474.83<br><small>€24.00/day</small></td>
-      <td>1,208</td>
-      <td>5.38%</td>
-      <td>69.28</td>
-      <td><span class="badge green">20.19x</span></td>
+      <td>€613.29<br><small>€28.00/day</small></td>
+      <td>1,360</td>
+      <td>5.22%</td>
+      <td>97.98</td>
+      <td><span class="badge green">25.24x</span></td>
     </tr>
     <tr>
       <td><strong>DT - S - Generic - KKC25 AI Max Search Generic</strong><br><small class="tag">SEARCH</small></td>
@@ -2316,25 +1232,25 @@
     <h3 style="margin:20px 0 10px;font-size:13px;color:#334155">Keyword Opportunities</h3>
     <table><thead><tr><th>Search Term</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>Conv</th><th>Action</th></tr></thead>
     <tbody>
-    <tr><td>camping kitsch</td><td>542</td><td>25.70%</td><td>€89.39</td><td>26.292442</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch 2026 belgie</td><td>122</td><td>38.49%</td><td>€7.55</td><td>7</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch 2026 tickets</td><td>23</td><td>38.98%</td><td>€1.26</td><td>3</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>camping kitsch club</td><td>20</td><td>16.95%</td><td>€4.89</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch line up</td><td>17</td><td>60.71%</td><td>€2.20</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch belgie 2026</td><td>15</td><td>46.88%</td><td>€1.61</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch 2025</td><td>12</td><td>20.00%</td><td>€2.18</td><td>0.436024</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>tickets kamping kitsch</td><td>12</td><td>63.16%</td><td>€0.74</td><td>1</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch line up 2026</td><td>10</td><td>66.67%</td><td>€0.62</td><td>0</td><td><span class="badge green">Add</span></td></tr>
-    <tr><td>kamping kitsch club belgie</td><td>10</td><td>55.56%</td><td>€0.47</td><td>2</td><td><span class="badge green">Add</span></td></tr></tbody></table>
+    <tr><td>camping kitsch</td><td>496</td><td>23.34%</td><td>€116.67</td><td>13.493472</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch 2026 belgie</td><td>82</td><td>31.18%</td><td>€6.76</td><td>6</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>camping kitsch club</td><td>35</td><td>20.11%</td><td>€11.58</td><td>0</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch line up</td><td>15</td><td>57.69%</td><td>€2.04</td><td>0</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch belgie 2026</td><td>13</td><td>44.83%</td><td>€0.49</td><td>0</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch line up 2026</td><td>11</td><td>44.00%</td><td>€1.04</td><td>0</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch club belgie</td><td>10</td><td>50.00%</td><td>€0.47</td><td>1</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>tickets kamping kitsch</td><td>9</td><td>47.37%</td><td>€0.71</td><td>1</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch 2026 line up</td><td>8</td><td>36.36%</td><td>€1.89</td><td>0</td><td><span class="badge green">Add</span></td></tr>
+    <tr><td>kamping kitsch locatie</td><td>7</td><td>29.17%</td><td>€3.12</td><td>0</td><td><span class="badge green">Add</span></td></tr></tbody></table>
     
     
     <h3 style="margin:20px 0 10px;font-size:13px;color:#334155">Device Breakdown</h3>
     <table><thead><tr><th>Device</th><th>Spend</th><th>Clicks</th><th>CTR</th><th>Conv</th><th>ROAS</th></tr></thead>
     <tbody>
-    <tr><td><strong>Mobile</strong></td><td>€860.96 <small>(84.44%)</small></td><td>6,078</td><td>18.08%</td><td>388.409894</td><td><span class="badge green">78.78x</span></td></tr>
-    <tr><td><strong>Desktop</strong></td><td>€118.50 <small>(11.62%)</small></td><td>962</td><td>22.98%</td><td>44.847782</td><td><span class="badge green">77.64x</span></td></tr>
-    <tr><td><strong>CONNECTED_TV</strong></td><td>€29.65 <small>(2.91%)</small></td><td>0</td><td>0.00%</td><td>13.124448</td><td><span class="badge green">32.87x</span></td></tr>
-    <tr><td><strong>Tablet</strong></td><td>€10.46 <small>(1.03%)</small></td><td>34</td><td>2.36%</td><td>0</td><td><span class="badge grey">—</span></td></tr></tbody></table>
+    <tr><td><strong>Mobile</strong></td><td>€1136.50 <small>(86.32%)</small></td><td>5,882</td><td>16.05%</td><td>336.57414500000004</td><td><span class="badge green">51.87x</span></td></tr>
+    <tr><td><strong>Desktop</strong></td><td>€134.27 <small>(10.20%)</small></td><td>850</td><td>19.92%</td><td>41.977567</td><td><span class="badge green">61.28x</span></td></tr>
+    <tr><td><strong>CONNECTED_TV</strong></td><td>€35.18 <small>(2.67%)</small></td><td>0</td><td>0.00%</td><td>14.923418</td><td><span class="badge green">36.33x</span></td></tr>
+    <tr><td><strong>Tablet</strong></td><td>€10.71 <small>(0.81%)</small></td><td>29</td><td>1.77%</td><td>0</td><td><span class="badge grey">—</span></td></tr></tbody></table>
 
     <div class="action-list" style="margin-top:20px">
         <div class="action-list-title">Action List — Google Ads</div>
@@ -2349,43 +1265,43 @@
           <span class="action-num">2</span>
           <span class="action-pill red">⏸ pause</span>
           <span class="action-what">kamping kitsch festival</span>
-          <span class="action-why">€9 spend, 41 clicks, 0 conv</span>
+          <span class="action-why">€11 spend, 35 clicks, 0 conv</span>
         </div>
         <div class="action-row">
           <span class="action-num">3</span>
           <span class="action-pill red">⏸ pause</span>
           <span class="action-what">line up kamping kitsch 2026</span>
-          <span class="action-why">€4 spend, 47 clicks, 0 conv</span>
+          <span class="action-why">€6 spend, 47 clicks, 0 conv</span>
         </div>
         <div class="action-row">
           <span class="action-num">4</span>
           <span class="action-pill green">➕ add</span>
           <span class="action-what">camping kitsch</span>
-          <span class="action-why">542 clicks, not yet a keyword</span>
+          <span class="action-why">496 clicks, not yet a keyword</span>
         </div>
         <div class="action-row">
           <span class="action-num">5</span>
           <span class="action-pill green">➕ add</span>
           <span class="action-what">kamping kitsch 2026 belgie</span>
-          <span class="action-why">122 clicks, not yet a keyword</span>
+          <span class="action-why">82 clicks, not yet a keyword</span>
         </div>
         <div class="action-row">
           <span class="action-num">6</span>
           <span class="action-pill green">➕ add</span>
-          <span class="action-what">kamping kitsch 2026 tickets</span>
-          <span class="action-why">23 clicks, not yet a keyword</span>
+          <span class="action-what">camping kitsch club</span>
+          <span class="action-why">35 clicks, not yet a keyword</span>
         </div>
         <div class="action-row">
           <span class="action-num">7</span>
           <span class="action-pill green">➕ add</span>
-          <span class="action-what">camping kitsch club</span>
-          <span class="action-why">20 clicks, not yet a keyword</span>
+          <span class="action-what">kamping kitsch line up</span>
+          <span class="action-why">15 clicks, not yet a keyword</span>
         </div>
         <div class="action-row">
           <span class="action-num">8</span>
           <span class="action-pill green">➕ add</span>
-          <span class="action-what">kamping kitsch line up</span>
-          <span class="action-why">17 clicks, not yet a keyword</span>
+          <span class="action-what">kamping kitsch belgie 2026</span>
+          <span class="action-why">13 clicks, not yet a keyword</span>
         </div>
       </div>
   </div>
@@ -2402,7 +1318,7 @@
     if (btn) btn.classList.add('active');
   }
   // Show first client on load
-  showClient('billion-avenue');
+  showClient('kamping-kitsch-club');
 
   // ── Access gate (URL token) ────────────────────────────────────────────────
   (function() {
